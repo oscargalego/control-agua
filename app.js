@@ -1,7 +1,7 @@
 'use strict';
 /* Control Agua — PWA de seguimiento del Waterdrop G2 */
 
-const VERSION = '1.1.1';
+const VERSION = '1.1.2';
 const KEY = 'control-agua.v1';
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
