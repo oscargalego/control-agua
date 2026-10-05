@@ -254,7 +254,7 @@ label.btn{position:relative}
 .swipe-h{font-size:13px;color:var(--muted);letter-spacing:.01em}
 .swipe-h b{color:var(--acc);font-weight:700;display:inline-block;animation:nudge 1.6s ease-in-out infinite}
 @keyframes nudge{50%{transform:translateX(-4px)}}
-#proc{touch-action:pan-y;user-select:none;-webkit-user-select:none}
+#proc,#proc *{touch-action:pan-y} #proc{user-select:none;-webkit-user-select:none}
 #proc input{user-select:text;-webkit-user-select:text}
 #alarm{position:fixed;inset:0;z-index:90;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center;cursor:pointer;
   background:radial-gradient(80% 60% at 50% 40%, color-mix(in srgb,var(--acc) 28%,var(--bg)) 0%, var(--bg) 75%);animation:alpulse 1.3s ease-in-out infinite}
