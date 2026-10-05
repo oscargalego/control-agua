@@ -246,9 +246,25 @@ label.btn{position:relative}
 .pwarn{display:flex;gap:10px;align-items:flex-start;background:var(--warn-soft);border-radius:12px;padding:10px 12px;font-size:14.5px!important}
 .pwarn .i{color:var(--warn);margin-top:1px}
 .ptip{font-size:14px!important;color:var(--muted)!important;border-left:2px solid var(--line2);padding-left:10px}
-.proc-nav{display:grid;grid-template-columns:1fr 2fr;gap:10px;padding:10px 16px calc(14px + env(safe-area-inset-bottom));max-width:560px;width:100%;margin:0 auto}
-.proc-nav .btn{min-height:52px;font-size:16px}
-.swipe-h{text-align:center;font-size:11.5px;color:var(--faint);padding-bottom:2px}
+.proc-foot{padding:10px 16px calc(16px + env(safe-area-inset-bottom));text-align:center}
+.dots{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.dots i{width:6px;height:6px;border-radius:6px;background:var(--line2);transition:.25s}
+.dots i.past{background:color-mix(in srgb,var(--acc) 45%,transparent)}
+.dots i.on{width:20px;background:var(--acc)}
+.swipe-h{font-size:13px;color:var(--muted);letter-spacing:.01em}
+.swipe-h b{color:var(--acc);font-weight:700;display:inline-block;animation:nudge 1.6s ease-in-out infinite}
+@keyframes nudge{50%{transform:translateX(-4px)}}
+#proc{touch-action:pan-y;user-select:none;-webkit-user-select:none}
+#proc input{user-select:text;-webkit-user-select:text}
+#alarm{position:fixed;inset:0;z-index:90;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center;cursor:pointer;
+  background:radial-gradient(80% 60% at 50% 40%, color-mix(in srgb,var(--acc) 28%,var(--bg)) 0%, var(--bg) 75%);animation:alpulse 1.3s ease-in-out infinite}
+@keyframes alpulse{50%{background-color:color-mix(in srgb,var(--acc) 10%,var(--bg))}}
+#alarm h2{font-size:30px;letter-spacing:-.02em;margin:10px 0 0}
+#alarm p{color:var(--muted);margin:0 0 18px}
+.al-ring{width:110px;height:110px;border-radius:50%;display:grid;place-items:center;background:var(--acc-soft);color:var(--acc);animation:ring .6s ease-in-out infinite}
+.al-ring .i{width:56px;height:56px;stroke-width:1.6}
+@keyframes ring{25%{transform:rotate(-12deg)}75%{transform:rotate(12deg)}}
+.al-btn{min-height:56px;padding:0 34px;font-size:17px}
 
 .timer{margin:8px 0 6px}
 .tm-ring{position:relative;width:170px;height:170px;margin:6px auto}
@@ -332,10 +348,15 @@ label.btn{position:relative}
   <div class="pbar"><i id="proc-bar"></i></div>
   <div class="proc-ill" id="proc-ill"></div>
   <div class="proc-txt" id="proc-txt"></div>
-  <div class="swipe-h">desliza ← → o usa los botones</div>
-  <div class="proc-nav"><button class="btn" id="prev">Atrás</button><button class="btn primary" id="next">Siguiente</button></div>
+  <div class="proc-foot"><div class="dots" id="proc-dots"></div><div class="swipe-h" id="proc-hint"></div></div>
 </div>
 
+<div id="alarm" hidden role="alertdialog" aria-live="assertive">
+  <div class="al-ring"><svg viewBox="0 0 24 24" class="i"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></div>
+  <h2 id="alarm-t">Tiempo cumplido</h2>
+  <p>Toca en cualquier sitio para parar la alarma</p>
+  <span class="btn primary al-btn">Parar alarma</span>
+</div>
 <div id="sheet" hidden></div>
 <div id="toast" role="status" aria-live="polite"></div>
 

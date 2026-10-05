@@ -1,7 +1,7 @@
 'use strict';
 /* Control Agua — PWA de seguimiento del Waterdrop G2 */
 
-const VERSION = '1.0.0';
+const VERSION = '1.1.0';
 const KEY = 'control-agua.v1';
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -411,7 +411,7 @@ function openProc(key) {
 }
 function closeProc(nav = true) {
   if ($('#proc').hidden) return;
-  stopTimer(); releaseLock();
+  stopTimer(); releaseLock(); stopAlarm();
   $('#proc').hidden = true; document.body.classList.remove('locked'); P.key = null;
   if (nav) { history.length > 1 ? history.back() : go('home'); }
 }
@@ -429,9 +429,11 @@ function drawStep(dir = 0) {
   if (st.register) body += registerHTML(proc);
   $('#proc-txt').innerHTML = body;
   $('#proc-txt').scrollTop = 0;
-  $('#prev').disabled = P.i === 0;
-  $('#next').hidden = !!st.register;
-  $('#next').textContent = P.i === n - 2 ? 'Terminar' : 'Siguiente';
+  $('#proc-dots').innerHTML = proc.steps.map((_, k) => `<i class="${k === P.i ? 'on' : k < P.i ? 'past' : ''}"></i>`).join('');
+  $('#proc-hint').innerHTML = P.i === 0 ? 'Desliza hacia la izquierda para empezar <b>←</b>'
+    : st.register ? '<b>→</b> Desliza a la derecha para volver'
+    : '<b>→</b> anterior · siguiente <b>←</b>';
+  $('#proc-x').setAttribute('aria-label', 'Cerrar');
   if (st.timer) bindTimer(st);
   if (st.register) bindRegister(proc);
 }
@@ -464,7 +466,7 @@ function bindTimer(st) {
   $('#tm-go').onclick = () => {
     const t = P.timer;
     if (t.running) { t.left = remaining(); t.running = false; clearInterval(t.iv); releaseLock(); }
-    else { if (t.left <= 0) t.left = t.total; t.end = Date.now() + t.left * 1000; t.running = true; tick(); t.iv = setInterval(tick, 250); keepAwake(); unlockAudio(); }
+    else { if (t.left <= 0) t.left = t.total; t.end = Date.now() + t.left * 1000; t.running = true; tick(); t.iv = setInterval(tick, 250); keepAwake(); unlockAudio(); askNotify(); }
     $('#tm-go').textContent = t.running ? 'Pausa' : 'Seguir';
   };
   $('#tm-r').onclick = () => { const t = P.timer; clearInterval(t.iv); t.running = false; t.left = t.total; releaseLock(); drawTimer(); $('#tm-go').textContent = 'Iniciar'; };
@@ -482,8 +484,7 @@ function tick() {
     clearInterval(t.iv); t.running = false; t.left = 0; releaseLock();
     const b = $('#tm-go'); if (b) b.textContent = 'Iniciar';
     $('#tm')?.classList.add('done');
-    navigator.vibrate?.([300, 150, 300, 150, 600]); chime();
-    toast('¡Tiempo cumplido!');
+    alarm(DATA.PROCS[P.key]?.steps[t.step]?.timerLabel || 'Temporizador');
   }
 }
 function stopTimer() { if (P.timer) clearInterval(P.timer.iv); P.timer = null; releaseLock(); }
@@ -491,14 +492,43 @@ async function keepAwake() { try { P.lock = await navigator.wakeLock?.request('s
 function releaseLock() { try { P.lock?.release(); } catch { } P.lock = null; }
 let AC;
 function unlockAudio() { try { AC ||= new (window.AudioContext || window.webkitAudioContext)(); AC.resume(); } catch { } }
-function chime() {
+/* alarma: suena y vibra en bucle hasta que se pare (máx. 2 min) */
+const AL = { iv: null, to: null };
+function beepPattern() {
   try {
-    unlockAudio(); const t0 = AC.currentTime;
-    [880, 1175, 1568].forEach((f, k) => {
-      const o = AC.createOscillator(), g = AC.createGain(); o.type = 'sine'; o.frequency.value = f;
-      g.gain.setValueAtTime(0.0001, t0 + k * .22); g.gain.exponentialRampToValueAtTime(.35, t0 + k * .22 + .02);
-      g.gain.exponentialRampToValueAtTime(.0001, t0 + k * .22 + .6); o.connect(g).connect(AC.destination); o.start(t0 + k * .22); o.stop(t0 + k * .22 + .7);
+    unlockAudio(); const t0 = AC.currentTime + .02;
+    [[988, 0], [784, .18], [988, .36], [784, .54]].forEach(([f, d]) => {
+      const o = AC.createOscillator(), g = AC.createGain(); o.type = 'square'; o.frequency.value = f;
+      g.gain.setValueAtTime(0.0001, t0 + d); g.gain.exponentialRampToValueAtTime(.5, t0 + d + .01);
+      g.gain.setValueAtTime(.5, t0 + d + .13); g.gain.exponentialRampToValueAtTime(.0001, t0 + d + .16);
+      o.connect(g).connect(AC.destination); o.start(t0 + d); o.stop(t0 + d + .17);
     });
+  } catch { }
+  navigator.vibrate?.([450, 150, 450]);
+}
+function alarm(label) {
+  stopAlarm();
+  const el = $('#alarm');
+  $('#alarm-t').textContent = label + ': tiempo cumplido';
+  el.hidden = false;
+  beepPattern(); AL.iv = setInterval(beepPattern, 1300);
+  AL.to = setTimeout(stopAlarm, 120000);
+  if (document.hidden) sysNotify(label + ': tiempo cumplido', 'Vuelve a la app para seguir con el cambio de filtro.');
+}
+function stopAlarm() {
+  clearInterval(AL.iv); clearTimeout(AL.to); AL.iv = AL.to = null;
+  navigator.vibrate?.(0);
+  const el = $('#alarm'); if (el) el.hidden = true;
+}
+function askNotify() {
+  try { if ('Notification' in window && Notification.permission === 'default') Notification.requestPermission(); } catch { }
+}
+async function sysNotify(title, body) {
+  try {
+    if (Notification.permission !== 'granted') return;
+    const reg = await navigator.serviceWorker?.ready;
+    reg?.showNotification(title, { body, icon: './icons/icon-192.png', badge: './icons/icon-192.png', tag: 'alarma',
+      renotify: true, requireInteraction: true, vibrate: [500, 200, 500, 200, 800] });
   } catch { }
 }
 
@@ -530,16 +560,17 @@ function bindRegister(proc) {
 /* gestos */
 function swipe(el) {
   let x0 = null, y0 = 0, t0 = 0;
-  el.addEventListener('touchstart', e => {
-    if (e.target.closest('input,button,a,label')) { x0 = null; return; }
-    x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; t0 = Date.now();
-  }, { passive: true });
-  el.addEventListener('touchend', e => {
+  el.addEventListener('pointerdown', e => {
+    if (e.target.closest('input,button,a,label,#alarm') || !e.isPrimary) { x0 = null; return; }
+    x0 = e.clientX; y0 = e.clientY; t0 = Date.now();
+  });
+  el.addEventListener('pointerup', e => {
     if (x0 == null) return;
-    const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
-    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.4 && Date.now() - t0 < 700) stepGo(dx < 0 ? 1 : -1);
+    const dx = e.clientX - x0, dy = e.clientY - y0;
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.3 && Date.now() - t0 < 900) stepGo(dx < 0 ? 1 : -1);
     x0 = null;
-  }, { passive: true });
+  });
+  el.addEventListener('pointercancel', () => { x0 = null; });
 }
 
 /* ---------------- copia de seguridad ---------------- */
@@ -603,8 +634,7 @@ function init() {
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
   $$('[data-go]').forEach(b => b.onclick = () => go(b.dataset.go));
   $('#proc-x').onclick = () => closeProc();
-  $('#prev').onclick = () => stepGo(-1);
-  $('#next').onclick = () => stepGo(1);
+  $('#alarm').onclick = stopAlarm;
   swipe($('#proc'));
   document.addEventListener('keydown', e => {
     if ($('#proc').hidden) return;
