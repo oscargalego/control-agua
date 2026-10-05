@@ -166,10 +166,10 @@ const ILL = (() => {
     },
     twistOut(f) {
       return wrap(`
-        ${dial(160, 120, 74, f, -90, { hl: true })}
+        <g class="anim-unturn">${dial(160, 120, 74, f, 0, { hl: true })}</g>
         ${marks(160, 120, 74)}
-        ${arc(160, 120, 102, 30, -60)}
-        ${badge(160, 224, 'antihorario ↺ y sacar')}
+        ${arc(160, 120, 102, -14, -66)}
+        ${badge(160, 224, '¼ de vuelta antihorario ↺ y sacar')}
       `);
     },
     pullOut(f) {
