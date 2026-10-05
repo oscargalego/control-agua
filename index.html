@@ -7,8 +7,8 @@
 <meta name="description" content="Seguimiento de filtros, recambios y mediciones TDS del sistema de ósmosis Waterdrop G2">
 <meta name="theme-color" content="#07090d">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="icon" href="icons/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
 <style>
 :root{
   --r:18px; --r-s:12px;
@@ -52,8 +52,7 @@ button{font:inherit;color:inherit}
   border-bottom:1px solid var(--line)}
 .hdr{display:flex;align-items:center;gap:10px;margin-bottom:10px}
 .brand{display:flex;align-items:center;gap:10px;background:none;border:0;padding:0;cursor:pointer;margin-right:auto;text-align:left}
-.brand .logo{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;
-  background:linear-gradient(145deg,var(--acc),var(--acc2));box-shadow:0 6px 18px -6px var(--acc)}
+.brand .logo{width:34px;height:34px;border-radius:9px;display:block;box-shadow:0 6px 18px -8px #3b8fe0}
 .brand b{display:block;font-size:17px;letter-spacing:-.01em;font-weight:650}
 .brand small{display:block;font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
 .ibtn{width:40px;height:40px;border-radius:12px;border:1px solid var(--line);background:var(--surf);display:grid;place-items:center;cursor:pointer}
@@ -296,7 +295,7 @@ label.btn{position:relative}
 <header class="top"><div class="wrap">
   <div class="hdr">
     <button class="brand" data-go="home" aria-label="Portada">
-      <span class="logo"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 3c3.5 4.6 6 7.8 6 11a6 6 0 0 1-12 0c0-3.2 2.5-6.4 6-11z" fill="#fff"/></svg></span>
+      <img class="logo" src="icons/icon-192.png" alt="" width="34" height="34">
       <span><b>Control Agua</b><small>Ósmosis · Waterdrop G2</small></span>
     </button>
     <button class="ibtn" data-go="luces" aria-label="Significado de las luces" title="Luces">
