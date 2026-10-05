@@ -1,6 +1,6 @@
 /* Control Agua — service worker: funciona sin conexión y avisos periódicos (experimental) */
-const CACHE = 'control-agua-v1.1.2';
-const SHELL = ['./', './index.html', './app.js', './data.js', './illus.js', './manifest.webmanifest',
+const CACHE = 'control-agua-v1.1.3';
+const SHELL = ['./', './index.html', './app.js', './data.js', './illus.js', './app.webmanifest',
   './icons/favicon-32.png', './icons/icon-180.png', './icons/icon-192.png', './icons/icon-512.png', './icons/maskable-192.png', './icons/maskable-512.png'];
 
 self.addEventListener('install', e => {
