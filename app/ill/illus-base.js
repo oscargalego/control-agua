@@ -18,16 +18,25 @@ const ILL = (() => {
 
   /* ---------- piezas ---------- */
   // Tapa del cartucho vista de frente; angle 0 = barra vertical (posición ON)
+  // opts.paddle: pala ancha arriba y estrecha abajo con triángulo (G3); sin él, barra recta con punto (G2)
   function dial(cx, cy, r, label, angle = 0, opts = {}) {
-    const bw = r * 0.3, bh = r * 1.15;
+    let grip;
+    if (opts.paddle) {
+      const wt = r * 0.66, wb = r * 0.32, top = cy - r * 0.78, bot = cy + r * 0.80;
+      grip = `<path d="M${cx - wt / 2},${top + wt * 0.35} Q${cx - wt / 2},${top} ${cx},${top} Q${cx + wt / 2},${top} ${cx + wt / 2},${top + wt * 0.35}
+          L${cx + wb / 2},${bot - wb / 2} Q${cx + wb / 2},${bot} ${cx},${bot} Q${cx - wb / 2},${bot} ${cx - wb / 2},${bot - wb / 2} Z" class="f-bar"/>
+        <path d="M${cx},${top + r * 0.1} l${r * 0.07},${r * 0.12} h${-r * 0.14} z" class="f-ink"/>
+        <text x="${cx}" y="${top + r * 0.48}" class="t-lbl" style="font-size:${Math.round(r * 0.22)}px" text-anchor="middle">${label}</text>`;
+    } else {
+      const bw = r * 0.3, bh = r * 1.15;
+      grip = `<rect x="${cx - bw / 2}" y="${cy - bh / 2}" width="${bw}" height="${bh}" rx="${bw * 0.3}" class="f-bar"/>
+        <circle cx="${cx}" cy="${cy - bh / 2 + 9}" r="2.6" class="f-ink"/>
+        <text x="${cx}" y="${cy - bh / 2 + 24}" class="t-lbl" style="font-size:${label.length > 2 ? 9.5 : 12}px" text-anchor="middle">${label}</text>`;
+    }
     return `<g>
       <circle cx="${cx}" cy="${cy}" r="${r + 8}" class="${opts.hl ? 's-acc' : 's-line'} f-none" stroke-width="${opts.hl ? 2.5 : 1.5}"/>
       <circle cx="${cx}" cy="${cy}" r="${r}" class="f-pl s-line" stroke-width="1.5"/>
-      <g transform="rotate(${angle} ${cx} ${cy})">
-        <rect x="${cx - bw / 2}" y="${cy - bh / 2}" width="${bw}" height="${bh}" rx="${bw * 0.3}" class="f-bar"/>
-        <circle cx="${cx}" cy="${cy - bh / 2 + 9}" r="2.6" class="f-ink"/>
-        <text x="${cx}" y="${cy - bh / 2 + 24}" class="t-lbl" style="font-size:${label.length > 2 ? 9.5 : 12}px" text-anchor="middle">${label}</text>
-      </g>
+      <g transform="rotate(${angle} ${cx} ${cy})">${grip}</g>
     </g>`;
   }
 
@@ -74,13 +83,14 @@ const ILL = (() => {
   }
 
   // Cartucho de lado (cilindro). long=true para el MRO
-  function cart(x, y, label, { long = false, cap = true, wrap = false, rot = 0 } = {}) {
-    const w = long ? 150 : 86, h = 56;
+  function cart(x, y, label, { long = false, cap = true, wrap = false, rot = 0, w: width } = {}) {
+    const w = width || (long ? 150 : 86), h = 56;
     return `<g transform="rotate(${rot} ${x + w / 2} ${y + h / 2})">
       <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="12" class="f-pl s-line" stroke-width="1.5"/>
       <rect x="${x + w}" y="${y + 16}" width="12" height="24" rx="3" class="f-bar s-line" stroke-width="1.2"/>
       ${cap ? `<rect x="${x + w + 10}" y="${y + 13}" width="10" height="30" rx="3" class="f-acc-soft s-acc" stroke-width="1.2"/>` : ''}
-      <text x="${x + w / 2}" y="${y + 33}" class="t-lbl" text-anchor="middle">${label}</text>
+      <text x="${x + w / 2}" y="${y + 33}" class="t-lbl" text-anchor="middle"
+        transform="rotate(${-rot} ${x + w / 2} ${y + h / 2})">${label}</text>
       ${wrap ? `<path d="M${x - 6},${y - 6} L${x + w + 8},${y - 8} L${x + w + 4},${y + h + 6} L${x - 4},${y + h + 8}z"
          class="f-none s-film" stroke-width="1.4" stroke-dasharray="4 5"/>` : ''}
     </g>`;
@@ -291,5 +301,7 @@ const ILL = (() => {
     </svg>`;
   }
 
-  return { S, front };
+  // utilidades para escenas de otros modelos
+  const H = { wrap, dial, marks, arc, badge, drop, faucet, cart, fingerAt, beep, check, clock };
+  return { S, front, H };
 })();

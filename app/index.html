@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#07090d">
+<meta name="description" content="Guía de mantenimiento de tu equipo de ósmosis: cambio de filtros paso a paso, recambios y mediciones TDS.">
+<title>Osmosis Control</title>
+<link rel="manifest" href="app.webmanifest">
+<link rel="icon" href="icons/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/oc.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="hdr">
+    <button class="brand" id="devbtn" aria-label="Equipo activo">
+      <img class="logo" src="icons/icon-192.png" alt="" width="34" height="34">
+      <span><b id="hdr-name">Osmosis Control</b><small id="hdr-model"></small></span>
+      <svg viewBox="0 0 24 24" class="i s caret" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <button class="ibtn" data-go="luces" id="btn-luces" aria-label="Luces" title="Luces">
+      <svg viewBox="0 0 24 24" class="i"><circle cx="12" cy="10" r="5"/><path d="M9.5 17h5M10 20.5h4M12 2v1.5M4.2 4.8l1.1 1.1M19.8 4.8l-1.1 1.1"/></svg></button>
+    <button class="ibtn" data-go="ajustes" aria-label="Ajustes" title="Ajustes">
+      <svg viewBox="0 0 24 24" class="i"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
+  </div>
+  <nav class="tabs" id="tabs" role="tablist">
+    <button class="tab" role="tab" data-go="filtros" data-t="ui.tab.filtros">Filtros</button>
+    <button class="tab" role="tab" data-go="recambios" data-t="ui.tab.recambios">Recambios</button>
+    <button class="tab" role="tab" data-go="mediciones" data-t="ui.tab.mediciones">Mediciones</button>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <section class="view hero" id="v-home"></section>
+  <section class="view" id="v-elegir" hidden></section>
+  <section class="view" id="v-filtros" hidden></section>
+  <section class="view" id="v-recambios" hidden></section>
+  <section class="view" id="v-mediciones" hidden></section>
+  <section class="view" id="v-luces" hidden></section>
+  <section class="view" id="v-ajustes" hidden></section>
+</main>
+
+<div id="proc" hidden>
+  <div class="proc-top">
+    <button class="ibtn" id="proc-x" aria-label="Cerrar"><svg viewBox="0 0 24 24" class="i"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="t"><b id="proc-t"></b><small id="proc-n"></small></div>
+  </div>
+  <div class="pbar"><i id="proc-bar"></i></div>
+  <div class="proc-ill" id="proc-ill"></div>
+  <div class="proc-txt" id="proc-txt"></div>
+  <div class="proc-foot"><div class="dots" id="proc-dots"></div><div class="swipe-h" id="proc-hint"></div></div>
+</div>
+
+<div id="alarm" hidden role="alertdialog" aria-live="assertive">
+  <div class="al-ring"><svg viewBox="0 0 24 24" class="i"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></div>
+  <h2 id="alarm-t"></h2>
+  <p id="alarm-p"></p>
+  <span class="btn primary al-btn" id="alarm-b"></span>
+</div>
+<div id="sheet" hidden></div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="data/datos.js"></script>
+<script src="ill/illus-base.js"></script>
+<script src="ill/frontal-g3p600.js"></script>
+<script src="ill/escenas-g3p600.js"></script>
+<script src="ill/escenas-gen5.js"></script>
+<script src="ill/escenas-frizzlife.js"></script>
+<script src="ill/escenas-g5p500.js"></script>
+<script src="ill/escenas-jimmy.js"></script>
+<script src="ill/escenas-k19.js"></script>
+<script src="ill/escenas-ropot.js"></script>
+<script src="ill/luces.js"></script>
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

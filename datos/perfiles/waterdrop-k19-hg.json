@@ -1,0 +1,251 @@
+{
+  "id": "waterdrop-k19-hg",
+  "version": 1,
+  "brand": "Waterdrop",
+  "model": "K19-HG",
+  "aliases": [
+    "WD-K19-HG",
+    "K19-HG mineralizado"
+  ],
+  "category": "sobremesa",
+  "markets": [
+    "es",
+    "de",
+    "fr",
+    "it",
+    "uk"
+  ],
+  "illustration": "k19",
+  "indicator": {
+    "type": "pantalla",
+    "countsVolume": true,
+    "screen": true,
+    "leds": [
+      {
+        "id": "uv",
+        "label": "UV"
+      },
+      {
+        "id": "filter",
+        "label": "Filter"
+      },
+      {
+        "id": "pump",
+        "label": "Pump"
+      },
+      {
+        "id": "tds",
+        "label": "💧"
+      },
+      {
+        "id": "flush",
+        "label": "Flush"
+      }
+    ],
+    "intro": "k19.luces.intro",
+    "source": "k19.luces.fuente"
+  },
+  "cartridges": [
+    {
+      "id": "RF",
+      "ref": "WD-K19RFG",
+      "label": "k19.cart.RFG",
+      "stages": [
+        "sedimentos",
+        "carbon-bloque",
+        "membrana-ro",
+        "postfiltro-carbon",
+        "remineralizador"
+      ],
+      "life": {
+        "months": 12,
+        "liters": 2000,
+        "editable": true,
+        "basis": "manual"
+      },
+      "fitting": "giro-sobremesa",
+      "position": "arriba, se saca hacia arriba",
+      "compatibleWith": [],
+      "parts": {
+        "search": "Waterdrop K19RFG",
+        "notThis": [
+          {
+            "ref": "WD-K19RF",
+            "reason": "k19.notThis.RF"
+          }
+        ]
+      }
+    }
+  ],
+  "procedures": {
+    "RF": {
+      "title": "k19.proc.RF",
+      "cartridges": [
+        "RF"
+      ],
+      "steps": [
+        {
+          "key": "k19.prep",
+          "params": {
+            "ref": "WD-K19RFG"
+          },
+          "scene": [
+            "prep"
+          ]
+        },
+        {
+          "key": "k19.sacar",
+          "scene": [
+            "twistOut"
+          ],
+          "removes": true
+        },
+        {
+          "key": "comun.prepararNuevo",
+          "params": {
+            "f": "WD-K19RFG"
+          },
+          "scene": [
+            "unwrap"
+          ]
+        },
+        {
+          "key": "k19.meter",
+          "scene": [
+            "twistIn"
+          ]
+        },
+        {
+          "key": "k19.reset",
+          "params": {
+            "s": 5
+          },
+          "scene": [
+            "resetHold"
+          ],
+          "critical": true
+        },
+        {
+          "key": "k19.purgaAuto",
+          "params": {
+            "min": 5
+          },
+          "scene": [
+            "flushAuto"
+          ],
+          "timer": 300,
+          "timerKey": "comun.timer.purga",
+          "critical": true
+        },
+        {
+          "key": "k19.desechar",
+          "params": {
+            "l": 3
+          },
+          "scene": [
+            "discard"
+          ],
+          "critical": true
+        },
+        {
+          "key": "comun.registrar",
+          "scene": [
+            "done"
+          ],
+          "register": true
+        }
+      ]
+    }
+  },
+  "lights": [
+    {
+      "group": "k19.luces.filtro",
+      "items": [
+        {
+          "leds": {
+            "filter": "off"
+          },
+          "key": "k19.luces.filtro.1"
+        },
+        {
+          "leds": {
+            "filter": "yellow"
+          },
+          "key": "k19.luces.filtro.2"
+        },
+        {
+          "leds": {
+            "filter": "red"
+          },
+          "key": "k19.luces.filtro.3"
+        }
+      ]
+    },
+    {
+      "group": "k19.luces.agua",
+      "items": [
+        {
+          "leds": {
+            "pump": "blue"
+          },
+          "key": "k19.luces.agua.1"
+        },
+        {
+          "leds": {
+            "flush": "blue"
+          },
+          "key": "k19.luces.agua.2"
+        },
+        {
+          "leds": {
+            "tds": "blue"
+          },
+          "key": "k19.luces.agua.3"
+        },
+        {
+          "leds": {
+            "tds": "red"
+          },
+          "key": "k19.luces.agua.4"
+        },
+        {
+          "leds": {
+            "uv": "blue"
+          },
+          "key": "k19.luces.agua.5"
+        }
+      ]
+    },
+    {
+      "group": "k19.luces.aviso",
+      "items": [
+        {
+          "leds": {},
+          "key": "k19.luces.aviso.1",
+          "screen": "L1"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Manual Waterdrop WD-K19-H (ManualsLib)",
+      "url": "https://www.manualslib.com/manual/4011737/Waterdrop-Wd-K19-H-Us.html",
+      "kind": "manual-oficial",
+      "checked": "2026-10-06"
+    },
+    {
+      "title": "Guía de cambio de filtro WD-K19 (PDF)",
+      "url": "https://m.media-amazon.com/images/I/A1KXPSmkLOL.pdf",
+      "kind": "manual-oficial",
+      "checked": "2026-10-06"
+    },
+    {
+      "title": "Waterdrop K19-HG (web europea)",
+      "url": "https://www.waterdropfilter.eu/es-it/products/sistema-ro-de-encimera-caliente-instantaneo-waterdrop-k19-hg",
+      "kind": "web-fabricante",
+      "checked": "2026-10-06"
+    }
+  ],
+  "status": "verificado"
+}

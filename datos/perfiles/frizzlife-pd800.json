@@ -1,0 +1,561 @@
+{
+  "id": "frizzlife-pd800",
+  "version": 1,
+  "brand": "Frizzlife",
+  "model": "PD800-TAM4",
+  "aliases": [
+    "PD800",
+    "PD800-TAM4"
+  ],
+  "category": "bajo-fregadero-sin-deposito",
+  "markets": [
+    "us",
+    "ca",
+    "de"
+  ],
+  "illustration": "frizzlife-pd",
+  "indicator": {
+    "type": "pantalla",
+    "countsVolume": true,
+    "leds": [
+      {
+        "id": "CP",
+        "label": "CP"
+      },
+      {
+        "id": "RO",
+        "label": "RO"
+      },
+      {
+        "id": "pwr",
+        "label": "⚡"
+      }
+    ],
+    "screen": true,
+    "intro": "frz.luces.intro",
+    "source": "frz.luces.fuente"
+  },
+  "cartridges": [
+    {
+      "id": "S1",
+      "ref": "ASR211",
+      "label": "frz.cart.S1",
+      "stages": [
+        "sedimentos",
+        "carbon-bloque"
+      ],
+      "life": {
+        "months": 12,
+        "liters": 3600,
+        "editable": true,
+        "basis": "manual"
+      },
+      "fitting": "bayoneta",
+      "position": "tapa superior (CP)",
+      "compatibleWith": [
+        "frizzlife-pd600"
+      ],
+      "parts": {
+        "search": "Frizzlife ASR211"
+      }
+    },
+    {
+      "id": "RO",
+      "ref": "ASR212-800G",
+      "label": "frz.cart.RO",
+      "stages": [
+        "membrana-ro"
+      ],
+      "life": {
+        "months": 24,
+        "liters": null,
+        "editable": true,
+        "basis": "web-fabricante"
+      },
+      "fitting": "bayoneta",
+      "position": "tapa inferior (RO)",
+      "parts": {
+        "search": "Frizzlife ASR212-800G",
+        "notThis": [
+          {
+            "ref": "ASR212-600G",
+            "reason": "frz.notThis.600"
+          }
+        ]
+      }
+    },
+    {
+      "id": "TAM",
+      "ref": "FZ-4",
+      "label": "frz.cart.TAM",
+      "stages": [
+        "remineralizador"
+      ],
+      "life": {
+        "months": 12,
+        "liters": 3600,
+        "editable": true,
+        "basis": "orientativo"
+      },
+      "fitting": "vaso-roscado",
+      "position": "vaso exterior TAM4, al lado del equipo",
+      "compatibleWith": [
+        "frizzlife-pd600"
+      ],
+      "parts": {
+        "search": "Frizzlife FZ-4"
+      }
+    }
+  ],
+  "procedures": {
+    "S1": {
+      "title": "frz.proc.S1",
+      "cartridges": [
+        "S1"
+      ],
+      "steps": [
+        {
+          "key": "frz.prep",
+          "scene": [
+            "prep",
+            "S1"
+          ],
+          "params": {
+            "ref": "ASR211"
+          }
+        },
+        {
+          "key": "frz.apagar",
+          "scene": [
+            "unplug"
+          ],
+          "critical": true
+        },
+        {
+          "key": "frz.cortarAgua",
+          "scene": [
+            "closeInlet"
+          ]
+        },
+        {
+          "key": "frz.sacar",
+          "scene": [
+            "twistOut",
+            "S1"
+          ],
+          "params": {
+            "f": "S1"
+          },
+          "removes": true
+        },
+        {
+          "key": "comun.prepararNuevo",
+          "scene": [
+            "unwrap",
+            "S1"
+          ],
+          "params": {
+            "f": "S1"
+          }
+        },
+        {
+          "key": "frz.meter",
+          "scene": [
+            "twistIn",
+            "S1"
+          ],
+          "params": {
+            "f": "S1"
+          }
+        },
+        {
+          "key": "frz.abrirAgua",
+          "scene": [
+            "openInlet"
+          ]
+        },
+        {
+          "key": "comun.comprobarFugas",
+          "scene": [
+            "leak",
+            "S1"
+          ],
+          "critical": true
+        },
+        {
+          "key": "frz.reset.pulsar",
+          "scene": [
+            "resetHold"
+          ],
+          "critical": true
+        },
+        {
+          "key": "frz.reset.elegir",
+          "scene": [
+            "resetSelect",
+            "S1"
+          ],
+          "params": {
+            "f": "S1"
+          },
+          "critical": true
+        },
+        {
+          "key": "frz.reset.confirmar",
+          "scene": [
+            "resetDone",
+            "S1"
+          ],
+          "params": {
+            "f": "S1"
+          },
+          "critical": true
+        },
+        {
+          "key": "frz.purga",
+          "scene": [
+            "flush",
+            10
+          ],
+          "params": {
+            "min": 10
+          },
+          "timer": 600,
+          "timerKey": "comun.timer.purga",
+          "critical": true
+        },
+        {
+          "key": "comun.registrar",
+          "scene": [
+            "done"
+          ],
+          "register": true
+        }
+      ]
+    },
+    "RO": {
+      "title": "frz.proc.RO",
+      "cartridges": [
+        "RO"
+      ],
+      "steps": [
+        {
+          "key": "frz.prep",
+          "scene": [
+            "prep",
+            "RO"
+          ],
+          "params": {
+            "ref": "ASR212-800G"
+          }
+        },
+        {
+          "key": "frz.apagar",
+          "scene": [
+            "unplug"
+          ],
+          "critical": true
+        },
+        {
+          "key": "frz.cortarAgua",
+          "scene": [
+            "closeInlet"
+          ]
+        },
+        {
+          "key": "frz.sacar",
+          "scene": [
+            "twistOut",
+            "RO"
+          ],
+          "params": {
+            "f": "RO"
+          },
+          "removes": true
+        },
+        {
+          "key": "comun.prepararNuevo",
+          "scene": [
+            "unwrap",
+            "RO"
+          ],
+          "params": {
+            "f": "RO"
+          }
+        },
+        {
+          "key": "frz.meter",
+          "scene": [
+            "twistIn",
+            "RO"
+          ],
+          "params": {
+            "f": "RO"
+          }
+        },
+        {
+          "key": "frz.abrirAgua",
+          "scene": [
+            "openInlet"
+          ]
+        },
+        {
+          "key": "comun.comprobarFugas",
+          "scene": [
+            "leak",
+            "RO"
+          ],
+          "critical": true
+        },
+        {
+          "key": "frz.reset.pulsar",
+          "scene": [
+            "resetHold"
+          ],
+          "critical": true
+        },
+        {
+          "key": "frz.reset.elegir",
+          "scene": [
+            "resetSelect",
+            "RO"
+          ],
+          "params": {
+            "f": "RO"
+          },
+          "critical": true
+        },
+        {
+          "key": "frz.reset.confirmar",
+          "scene": [
+            "resetDone",
+            "RO"
+          ],
+          "params": {
+            "f": "RO"
+          },
+          "critical": true
+        },
+        {
+          "key": "frz.purga",
+          "scene": [
+            "flush",
+            20
+          ],
+          "params": {
+            "min": 20
+          },
+          "timer": 1200,
+          "timerKey": "comun.timer.purga",
+          "critical": true
+        },
+        {
+          "key": "comun.registrar",
+          "scene": [
+            "done"
+          ],
+          "register": true
+        }
+      ]
+    },
+    "TAM": {
+      "title": "frz.proc.TAM",
+      "cartridges": [
+        "TAM"
+      ],
+      "steps": [
+        {
+          "key": "frz.prep",
+          "scene": [
+            "prep",
+            "TAM"
+          ],
+          "params": {
+            "ref": "FZ-4 (TAM4)"
+          }
+        },
+        {
+          "key": "frz.apagar",
+          "scene": [
+            "unplug"
+          ],
+          "critical": true
+        },
+        {
+          "key": "frz.cortarAgua",
+          "scene": [
+            "closeInlet"
+          ]
+        },
+        {
+          "key": "frz.tam.abrir",
+          "scene": [
+            "tamOpen"
+          ],
+          "removes": true
+        },
+        {
+          "key": "frz.tam.cambiar",
+          "scene": [
+            "tamSwap"
+          ]
+        },
+        {
+          "key": "frz.tam.cerrar",
+          "scene": [
+            "tamClose"
+          ]
+        },
+        {
+          "key": "frz.abrirAgua",
+          "scene": [
+            "openInlet"
+          ]
+        },
+        {
+          "key": "comun.comprobarFugas",
+          "scene": [
+            "leak",
+            "TAM"
+          ],
+          "critical": true
+        },
+        {
+          "key": "frz.purga",
+          "scene": [
+            "flush",
+            10
+          ],
+          "params": {
+            "min": 10
+          },
+          "timer": 600,
+          "timerKey": "comun.timer.purga",
+          "critical": true
+        },
+        {
+          "key": "comun.registrar",
+          "scene": [
+            "done"
+          ],
+          "register": true
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Manual Frizzlife PD800-TAM4 (ManualsLib)",
+      "url": "https://www.manualslib.de/manual/1528637/Frizzlife-Pd800-Tam4.html",
+      "kind": "manual-oficial",
+      "checked": "2026-10-06"
+    },
+    {
+      "title": "Frizzlife ASR212-800G",
+      "url": "https://www.frizzlife.com/products/asr212-800g",
+      "kind": "web-fabricante",
+      "checked": "2026-10-06"
+    },
+    {
+      "title": "Frizzlife ASR211 (compatible PD600/PD800)",
+      "url": "https://www.frizzlife.com/products/asr211",
+      "kind": "web-fabricante",
+      "checked": "2026-10-06"
+    }
+  ],
+  "status": "borrador",
+  "lights": [
+    {
+      "group": "frz.luces.normal",
+      "items": [
+        {
+          "leds": {
+            "CP": "blue",
+            "RO": "blue",
+            "pwr": "blue"
+          },
+          "key": "frz.luces.normal.1",
+          "screen": "06"
+        },
+        {
+          "leds": {
+            "CP": "blue",
+            "RO": "blue",
+            "pwr": "blink"
+          },
+          "key": "frz.luces.normal.2",
+          "screen": "06"
+        },
+        {
+          "leds": {
+            "CP": "blue",
+            "RO": "blue",
+            "pwr": "blue"
+          },
+          "key": "frz.luces.normal.3",
+          "sound": "pitido"
+        },
+        {
+          "leds": {
+            "CP": "blue",
+            "RO": "blue",
+            "pwr": "blue"
+          },
+          "key": "frz.luces.normal.4",
+          "screen": "– –"
+        }
+      ]
+    },
+    {
+      "group": "frz.luces.vida",
+      "items": [
+        {
+          "leds": {
+            "CP": "blinkred",
+            "RO": "blue",
+            "pwr": "blue"
+          },
+          "key": "frz.luces.vida.1"
+        },
+        {
+          "leds": {
+            "CP": "red",
+            "RO": "blue",
+            "pwr": "blue"
+          },
+          "key": "frz.luces.vida.2",
+          "sound": "pitido-continuo"
+        },
+        {
+          "leds": {
+            "CP": "blink",
+            "RO": "blue",
+            "pwr": "blue"
+          },
+          "key": "frz.luces.vida.3"
+        }
+      ]
+    },
+    {
+      "group": "frz.luces.aviso",
+      "items": [
+        {
+          "leds": {
+            "CP": "blinkred",
+            "RO": "blinkred",
+            "pwr": "blinkred"
+          },
+          "key": "frz.luces.aviso.1"
+        },
+        {
+          "leds": {
+            "CP": "off",
+            "RO": "off",
+            "pwr": "off"
+          },
+          "key": "frz.luces.aviso.2"
+        }
+      ]
+    }
+  ]
+}

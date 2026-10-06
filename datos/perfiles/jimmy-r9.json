@@ -1,0 +1,544 @@
+{
+  "id": "jimmy-r9",
+  "version": 1,
+  "brand": "JIMMY",
+  "model": "R9",
+  "aliases": [
+    "JIMMY R9",
+    "R9 Pro",
+    "M9 Pro"
+  ],
+  "category": "sobremesa",
+  "markets": [
+    "es",
+    "de",
+    "fr",
+    "it",
+    "uk",
+    "us"
+  ],
+  "illustration": "jimmy-r9",
+  "indicator": {
+    "type": "pantalla",
+    "countsVolume": false,
+    "screen": true,
+    "leds": [
+      {
+        "id": "1",
+        "label": "1"
+      },
+      {
+        "id": "2",
+        "label": "2"
+      },
+      {
+        "id": "3",
+        "label": "3"
+      },
+      {
+        "id": "pur",
+        "label": "💧"
+      },
+      {
+        "id": "err",
+        "label": "⚠"
+      }
+    ],
+    "intro": "jim.luces.intro",
+    "source": "jim.luces.fuente"
+  },
+  "cartridges": [
+    {
+      "id": "F1",
+      "ref": "M2S",
+      "label": "jim.cart.F1",
+      "stages": [
+        "sedimentos",
+        "carbon-bloque"
+      ],
+      "life": {
+        "months": 12,
+        "liters": 1500,
+        "editable": true,
+        "basis": "manual"
+      },
+      "fitting": "giro-sobremesa",
+      "position": "hueco 1 (bajo la tapa superior)",
+      "compatibleWith": [],
+      "parts": {
+        "search": "JIMMY M2S"
+      }
+    },
+    {
+      "id": "F2",
+      "ref": "RO-2.0S",
+      "label": "jim.cart.F2",
+      "stages": [
+        "membrana-ro"
+      ],
+      "life": {
+        "months": 24,
+        "liters": 3500,
+        "editable": true,
+        "basis": "manual"
+      },
+      "fitting": "giro-sobremesa",
+      "position": "hueco 2",
+      "parts": {
+        "search": "JIMMY RO-2.0S"
+      }
+    },
+    {
+      "id": "F3",
+      "ref": "Q2S",
+      "label": "jim.cart.F3",
+      "stages": [
+        "postfiltro-carbon",
+        "remineralizador"
+      ],
+      "life": {
+        "months": 12,
+        "liters": 1500,
+        "editable": true,
+        "basis": "manual"
+      },
+      "fitting": "giro-sobremesa",
+      "position": "hueco 3",
+      "parts": {
+        "search": "JIMMY Q2S"
+      }
+    }
+  ],
+  "procedures": {
+    "F1": {
+      "title": "jim.proc.F1",
+      "cartridges": [
+        "F1"
+      ],
+      "steps": [
+        {
+          "key": "jim.prep",
+          "params": {
+            "n": 1,
+            "ref": "M2S"
+          },
+          "scene": [
+            "prep",
+            "F1"
+          ]
+        },
+        {
+          "key": "jim.apagar",
+          "scene": [
+            "unplug"
+          ],
+          "critical": true
+        },
+        {
+          "key": "jim.tapa",
+          "scene": [
+            "openTop"
+          ]
+        },
+        {
+          "key": "jim.desbloquear",
+          "params": {
+            "n": 1
+          },
+          "scene": [
+            "twistUnlock",
+            "F1"
+          ],
+          "removes": true
+        },
+        {
+          "key": "jim.sacar",
+          "params": {
+            "n": 1
+          },
+          "scene": [
+            "liftOut",
+            "F1"
+          ]
+        },
+        {
+          "key": "jim.meter",
+          "params": {
+            "n": 1
+          },
+          "scene": [
+            "insertLock",
+            "F1"
+          ]
+        },
+        {
+          "key": "jim.cerrar",
+          "scene": [
+            "closeTop"
+          ]
+        },
+        {
+          "key": "jim.reset.entrar",
+          "params": {
+            "c": 98,
+            "f": 200
+          },
+          "scene": [
+            "resetEnter"
+          ],
+          "critical": true
+        },
+        {
+          "key": "jim.reset.filtro",
+          "params": {
+            "n": 1,
+            "c": 45,
+            "f": 110
+          },
+          "scene": [
+            "resetFilter",
+            "F1"
+          ],
+          "critical": true
+        },
+        {
+          "key": "jim.purga",
+          "params": {
+            "v": 3
+          },
+          "scene": [
+            "flushCups"
+          ],
+          "critical": true
+        },
+        {
+          "key": "comun.registrar",
+          "scene": [
+            "done"
+          ],
+          "register": true
+        }
+      ]
+    },
+    "F2": {
+      "title": "jim.proc.F2",
+      "cartridges": [
+        "F2"
+      ],
+      "steps": [
+        {
+          "key": "jim.prep",
+          "params": {
+            "n": 2,
+            "ref": "RO-2.0S"
+          },
+          "scene": [
+            "prep",
+            "F2"
+          ]
+        },
+        {
+          "key": "jim.apagar",
+          "scene": [
+            "unplug"
+          ],
+          "critical": true
+        },
+        {
+          "key": "jim.tapa",
+          "scene": [
+            "openTop"
+          ]
+        },
+        {
+          "key": "jim.desbloquear",
+          "params": {
+            "n": 2
+          },
+          "scene": [
+            "twistUnlock",
+            "F2"
+          ],
+          "removes": true
+        },
+        {
+          "key": "jim.sacar",
+          "params": {
+            "n": 2
+          },
+          "scene": [
+            "liftOut",
+            "F2"
+          ]
+        },
+        {
+          "key": "jim.meter",
+          "params": {
+            "n": 2
+          },
+          "scene": [
+            "insertLock",
+            "F2"
+          ]
+        },
+        {
+          "key": "jim.cerrar",
+          "scene": [
+            "closeTop"
+          ]
+        },
+        {
+          "key": "jim.reset.entrar",
+          "params": {
+            "c": 98,
+            "f": 200
+          },
+          "scene": [
+            "resetEnter"
+          ],
+          "critical": true
+        },
+        {
+          "key": "jim.reset.filtro",
+          "params": {
+            "n": 2,
+            "c": 55,
+            "f": 130
+          },
+          "scene": [
+            "resetFilter",
+            "F2"
+          ],
+          "critical": true
+        },
+        {
+          "key": "jim.purga",
+          "params": {
+            "v": 3
+          },
+          "scene": [
+            "flushCups"
+          ],
+          "critical": true
+        },
+        {
+          "key": "comun.registrar",
+          "scene": [
+            "done"
+          ],
+          "register": true
+        }
+      ]
+    },
+    "F3": {
+      "title": "jim.proc.F3",
+      "cartridges": [
+        "F3"
+      ],
+      "steps": [
+        {
+          "key": "jim.prep",
+          "params": {
+            "n": 3,
+            "ref": "Q2S"
+          },
+          "scene": [
+            "prep",
+            "F3"
+          ]
+        },
+        {
+          "key": "jim.apagar",
+          "scene": [
+            "unplug"
+          ],
+          "critical": true
+        },
+        {
+          "key": "jim.tapa",
+          "scene": [
+            "openTop"
+          ]
+        },
+        {
+          "key": "jim.desbloquear",
+          "params": {
+            "n": 3
+          },
+          "scene": [
+            "twistUnlock",
+            "F3"
+          ],
+          "removes": true
+        },
+        {
+          "key": "jim.sacar",
+          "params": {
+            "n": 3
+          },
+          "scene": [
+            "liftOut",
+            "F3"
+          ]
+        },
+        {
+          "key": "jim.meter",
+          "params": {
+            "n": 3
+          },
+          "scene": [
+            "insertLock",
+            "F3"
+          ]
+        },
+        {
+          "key": "jim.cerrar",
+          "scene": [
+            "closeTop"
+          ]
+        },
+        {
+          "key": "jim.reset.entrar",
+          "params": {
+            "c": 98,
+            "f": 200
+          },
+          "scene": [
+            "resetEnter"
+          ],
+          "critical": true
+        },
+        {
+          "key": "jim.reset.filtro",
+          "params": {
+            "n": 3,
+            "c": 65,
+            "f": 150
+          },
+          "scene": [
+            "resetFilter",
+            "F3"
+          ],
+          "critical": true
+        },
+        {
+          "key": "jim.purga",
+          "params": {
+            "v": 3
+          },
+          "scene": [
+            "flushCups"
+          ],
+          "critical": true
+        },
+        {
+          "key": "comun.registrar",
+          "scene": [
+            "done"
+          ],
+          "register": true
+        }
+      ]
+    }
+  },
+  "lights": [
+    {
+      "group": "jim.luces.normal",
+      "items": [
+        {
+          "leds": {
+            "1": "blue",
+            "2": "blue",
+            "3": "blue",
+            "pur": "blue"
+          },
+          "key": "jim.luces.normal.1"
+        },
+        {
+          "leds": {
+            "pur": "blink"
+          },
+          "key": "jim.luces.normal.2"
+        },
+        {
+          "leds": {},
+          "key": "jim.luces.normal.3"
+        }
+      ]
+    },
+    {
+      "group": "jim.luces.filtros",
+      "items": [
+        {
+          "leds": {
+            "1": "blue",
+            "2": "blue",
+            "3": "blue"
+          },
+          "key": "jim.luces.filtros.1"
+        },
+        {
+          "leds": {
+            "1": "off",
+            "2": "blue",
+            "3": "blue"
+          },
+          "key": "jim.luces.filtros.2",
+          "sound": "pitido"
+        },
+        {
+          "leds": {
+            "1": "blink",
+            "2": "blink",
+            "3": "blink"
+          },
+          "key": "jim.luces.filtros.3"
+        },
+        {
+          "leds": {},
+          "key": "jim.luces.filtros.4",
+          "screen": "30"
+        }
+      ]
+    },
+    {
+      "group": "jim.luces.aviso",
+      "items": [
+        {
+          "leds": {
+            "err": "blinkred"
+          },
+          "key": "jim.luces.aviso.1",
+          "sound": "pitido"
+        },
+        {
+          "leds": {},
+          "key": "jim.luces.aviso.2",
+          "screen": "999",
+          "sound": "pitido"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Manual JIMMY R9 (ManualsLib)",
+      "url": "https://www.manualslib.com/manual/3949971/Jimmy-R9.html",
+      "kind": "manual-oficial",
+      "checked": "2026-10-06"
+    },
+    {
+      "title": "JIMMY: recambios R9 / R9 Pro / M9 Pro",
+      "url": "https://jimmy.eu/products/filter-cartridge-for-r9-countertop-reverse-osmosis-water-purifier",
+      "kind": "web-fabricante",
+      "checked": "2026-10-06"
+    },
+    {
+      "title": "JIMMY R9: ficha del producto (botones en °C)",
+      "url": "https://jimmy.eu/products/r9-countertop-reverse-osmosis-water-purifier",
+      "kind": "web-fabricante",
+      "checked": "2026-10-06"
+    }
+  ],
+  "status": "verificado"
+}

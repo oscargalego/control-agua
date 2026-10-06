@@ -1,25 +1,31 @@
-# Control Agua
+# Osmosis Control
 
-PWA personal para el mantenimiento del sistema de ósmosis **Waterdrop G2 (WD-G2-W)**.
+Guía de mantenimiento para equipos de ósmosis inversa: cambio de filtros paso a paso con dibujos, vida de cada cartucho, recambios en Amazon, luces del equipo y mediciones TDS.
 
-- **Portada:** frontal del equipo (ilustración propia). Tocar un cartucho abre su cambio paso a paso. Las luces y los anillos muestran el estado estimado de cada filtro.
-- **Cambio de filtros:** CF, MRO o ambos a pantalla completa, con dibujos, deslizar o botones, temporizadores (30 s de presión, purgas de 5 y 30 min) y registro del cambio con fecha editable. Historial y aviso en Google Calendar.
-- **Recambios:** originales en Amazon.es y estado de los compatibles.
-- **Mediciones ppm:** grifo y ósmosis con fecha automática editable, nota, % de rechazo y alertas por umbral.
-- **Luces:** significado de cada indicador según el manual del G2.
-- **Ajustes:** fechas de instalación, vida de cada filtro, antelación del aviso, umbrales, tema oscuro/claro y copia de seguridad.
+> Rama `osmosis-control`: app multimodelo en desarrollo. La rama `main` sigue siendo **Control Agua** (solo Waterdrop G2), la versión estable publicada.
 
-Los datos se guardan solo en el móvil (`localStorage`). La vida útil se calcula por tiempo; la luz del equipo, que también cuenta litros, es la referencia.
+## Estructura
 
-## Publicar en GitHub Pages
+| Carpeta | Qué hay |
+| --- | --- |
+| `datos/perfiles/` | Un JSON por equipo (14): cartuchos, vidas, guías, luces |
+| `datos/i18n/` | Textos por idioma (`es.json`; claves `ui.*` para la interfaz) |
+| `datos/recambios/enlaces.json` | Enlaces exactos de Amazon por referencia y tienda (se publican aparte) |
+| `datos/schema/`, `datos/tools/validar.mjs` | Esquema y comprobación automática de los perfiles |
+| `datos/fichas/`, `datos/ESPECIFICACION.md` | Fuentes y decisiones de cada equipo; especificación del modelo de datos |
+| `app/` | La app web (lo que empaquetará Capacitor): `index.html`, `js/`, `css/`, `ill/` (dibujos), `data/datos.js` (generado) |
+| `tools/build.mjs` | Valida `datos/` y genera `app/data/datos.js` |
+| `tools/probar_app.py` | Prueba en navegador: recorre todas las guías y saca capturas a `test-output/` |
 
-1. Sube el contenido de esta carpeta a la rama `main` del repositorio `control-agua`.
-2. *Settings → Pages → Deploy from a branch → main / (root)*.
-3. Abre `https://oscargalego.github.io/control-agua/` en Chrome del móvil → menú ⋮ → *Instalar aplicación*.
+## Uso
 
-Al publicar una versión nueva, sube el número de `CACHE` en `sw.js` y `VERSION` en `app.js`.
+```bash
+npm install          # ajv para el validador
+npm run build        # valida y genera app/data/datos.js
+python3 tools/probar_app.py
+python3 -m http.server -d app 8000   # y abrir http://localhost:8000
+```
 
-## Fuentes
+## Gratis y premium
 
-- Manual del usuario Waterdrop G2 (WD-G2-W): indicadores, reset, purgado y avisos de avería.
-- Hojas de instrucciones de los cartuchos WD-G2CF y WD-G2MRO.
+Gratis: elegir equipo, portada, luces, recambios, una medición y los primeros pasos de cada guía (nunca llega al paso en que se saca un cartucho). Premium (pago único): guías completas, vida de los filtros y avisos, historial, mediciones sin límite y varios equipos. En la versión web de pruebas premium se activa sin pago desde Ajustes → Pruebas.

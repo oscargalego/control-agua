@@ -1,8 +1,8 @@
 {
-  "id": "/control-agua/?app=g2",
-  "name": "Control Agua",
-  "short_name": "Control Agua",
-  "description": "Filtros, recambios y mediciones TDS del sistema de ósmosis Waterdrop G2",
+  "id": "/osmosis-control/",
+  "name": "Osmosis Control",
+  "short_name": "Osmosis Control",
+  "description": "Cambio de filtros paso a paso, recambios y mediciones TDS para tu equipo de ósmosis",
   "lang": "es",
   "start_url": "./",
   "scope": "./",

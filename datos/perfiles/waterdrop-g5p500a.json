@@ -1,0 +1,398 @@
+{
+  "id": "waterdrop-g5p500a",
+  "version": 1,
+  "brand": "Waterdrop",
+  "model": "G5P500A",
+  "aliases": [
+    "WD-G5P500A",
+    "G5P500A alcalino",
+    "G5P500 pH+"
+  ],
+  "category": "bajo-fregadero-sin-deposito",
+  "markets": [
+    "us",
+    "ca",
+    "uk",
+    "de",
+    "fr",
+    "it",
+    "es"
+  ],
+  "illustration": "g5p500",
+  "indicator": {
+    "type": "luces",
+    "leds": [
+      {
+        "id": "CF",
+        "label": "CF"
+      },
+      {
+        "id": "RO",
+        "label": "RO"
+      }
+    ],
+    "intro": "wd-g5.luces.intro",
+    "source": "wd-g5.luces.fuente"
+  },
+  "lights": [
+    {
+      "group": "wd-g5.luces.normal",
+      "items": [
+        {
+          "leds": {
+            "CF": "blue",
+            "RO": "blue"
+          },
+          "key": "wd-g5.luces.normal.1"
+        },
+        {
+          "leds": {
+            "CF": "blink",
+            "RO": "blink"
+          },
+          "key": "wd-g5.luces.normal.2"
+        }
+      ]
+    },
+    {
+      "group": "wd-g5.luces.vida",
+      "items": [
+        {
+          "leds": {
+            "CF": "yellow",
+            "RO": "blue"
+          },
+          "key": "wd-g5.luces.vida.1"
+        },
+        {
+          "leds": {
+            "CF": "red",
+            "RO": "blue"
+          },
+          "key": "wd-g5.luces.vida.2",
+          "sound": "pitido-continuo"
+        }
+      ]
+    }
+  ],
+  "cartridges": [
+    {
+      "id": "CF",
+      "ref": "WD-G5P500A-CF",
+      "label": "wd-g5.cart.CFA",
+      "stages": [
+        "sedimentos",
+        "carbon-bloque",
+        "remineralizador"
+      ],
+      "life": {
+        "months": 6,
+        "liters": 4000,
+        "editable": true,
+        "basis": "web-fabricante"
+      },
+      "fitting": "bayoneta",
+      "position": "tapa superior",
+      "parts": {
+        "search": "Waterdrop G5P500A-CF",
+        "notThis": [
+          {
+            "ref": "WD-G5P500-CF",
+            "reason": "wd-g5.notThis.CFnormal"
+          }
+        ]
+      }
+    },
+    {
+      "id": "RO",
+      "ref": "WD-G5P500-RO",
+      "label": "wd-g5.cart.RO",
+      "stages": [
+        "membrana-ro"
+      ],
+      "life": {
+        "months": 24,
+        "liters": 7990,
+        "editable": true,
+        "basis": "web-fabricante"
+      },
+      "fitting": "bayoneta",
+      "position": "tapa inferior",
+      "compatibleWith": [
+        "waterdrop-g5p500"
+      ],
+      "parts": {
+        "search": "Waterdrop G5P500-RO"
+      }
+    }
+  ],
+  "procedures": {
+    "CF": {
+      "title": "wd-g5.proc.CF",
+      "cartridges": [
+        "CF"
+      ],
+      "steps": [
+        {
+          "key": "wd-g3.prep",
+          "params": {
+            "f": "CF",
+            "ref": "WD-G5P500A-CF"
+          },
+          "scene": [
+            "prep",
+            "CF"
+          ]
+        },
+        {
+          "key": "wd-g5.cerrarGrifo",
+          "params": {
+            "min": 5
+          },
+          "scene": [
+            "closeTap"
+          ],
+          "timer": 300,
+          "timerKey": "comun.timer.presion"
+        },
+        {
+          "key": "comun.girarAntihorario",
+          "params": {
+            "f": "CF"
+          },
+          "scene": [
+            "twistOut",
+            "CF"
+          ],
+          "removes": true
+        },
+        {
+          "key": "wd-g5.sacar",
+          "params": {
+            "f": "CF"
+          },
+          "scene": [
+            "pullOut",
+            "CF"
+          ]
+        },
+        {
+          "key": "wd-g5.vaciarViejo",
+          "scene": [
+            "drainOld",
+            "CF"
+          ]
+        },
+        {
+          "key": "comun.prepararNuevo",
+          "params": {
+            "f": "CF"
+          },
+          "scene": [
+            "unwrap",
+            "CF"
+          ]
+        },
+        {
+          "key": "wd-g5.meter",
+          "params": {
+            "f": "CF"
+          },
+          "scene": [
+            "twistIn",
+            "CF"
+          ]
+        },
+        {
+          "key": "wd-g3.fugas",
+          "scene": [
+            "leak",
+            "CF"
+          ],
+          "critical": true
+        },
+        {
+          "key": "wd-g3.reset",
+          "params": {
+            "f": "CF",
+            "s": 7
+          },
+          "scene": [
+            "reset",
+            "CF",
+            7
+          ],
+          "critical": true
+        },
+        {
+          "key": "wd-g5.purga",
+          "params": {
+            "min": 15
+          },
+          "scene": [
+            "flush",
+            15,
+            "CF"
+          ],
+          "timer": 900,
+          "timerKey": "comun.timer.purga",
+          "critical": true
+        },
+        {
+          "key": "comun.registrar",
+          "scene": [
+            "done"
+          ],
+          "register": true
+        }
+      ]
+    },
+    "RO": {
+      "title": "wd-g5.proc.RO",
+      "cartridges": [
+        "RO"
+      ],
+      "steps": [
+        {
+          "key": "wd-g3.prep",
+          "params": {
+            "f": "RO",
+            "ref": "WD-G5P500-RO"
+          },
+          "scene": [
+            "prep",
+            "RO"
+          ]
+        },
+        {
+          "key": "wd-g5.cerrarGrifo",
+          "params": {
+            "min": 5
+          },
+          "scene": [
+            "closeTap"
+          ],
+          "timer": 300,
+          "timerKey": "comun.timer.presion"
+        },
+        {
+          "key": "comun.girarAntihorario",
+          "params": {
+            "f": "RO"
+          },
+          "scene": [
+            "twistOut",
+            "RO"
+          ],
+          "removes": true
+        },
+        {
+          "key": "wd-g5.sacar",
+          "params": {
+            "f": "RO"
+          },
+          "scene": [
+            "pullOut",
+            "RO"
+          ]
+        },
+        {
+          "key": "wd-g5.vaciarViejo",
+          "scene": [
+            "drainOld",
+            "RO"
+          ]
+        },
+        {
+          "key": "comun.prepararNuevo",
+          "params": {
+            "f": "RO"
+          },
+          "scene": [
+            "unwrap",
+            "RO"
+          ]
+        },
+        {
+          "key": "wd-g5.meter",
+          "params": {
+            "f": "RO"
+          },
+          "scene": [
+            "twistIn",
+            "RO"
+          ]
+        },
+        {
+          "key": "wd-g3.fugas",
+          "scene": [
+            "leak",
+            "RO"
+          ],
+          "critical": true
+        },
+        {
+          "key": "wd-g3.reset",
+          "params": {
+            "f": "RO",
+            "s": 7
+          },
+          "scene": [
+            "reset",
+            "RO",
+            7
+          ],
+          "critical": true
+        },
+        {
+          "key": "wd-g5.purga",
+          "params": {
+            "min": 30
+          },
+          "scene": [
+            "flush",
+            30,
+            "RO"
+          ],
+          "timer": 1800,
+          "timerKey": "comun.timer.purga",
+          "critical": true
+        },
+        {
+          "key": "comun.registrar",
+          "scene": [
+            "done"
+          ],
+          "register": true
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Manual Waterdrop G5P500 (Manuals+)",
+      "url": "https://manuals.plus/asin/B0DPH2SWF5",
+      "kind": "manual-oficial",
+      "checked": "2026-10-06"
+    },
+    {
+      "title": "Waterdrop G5P500: ficha del producto",
+      "url": "https://www.waterdropfilter.com/products/ro-water-filter-g5p500",
+      "kind": "web-fabricante",
+      "checked": "2026-10-06"
+    },
+    {
+      "title": "Waterdrop G5P500-RO",
+      "url": "https://www.waterdropfilter.com/products/ro-filter-replacement-for-g5p500-series",
+      "kind": "web-fabricante",
+      "checked": "2026-10-06"
+    },
+    {
+      "title": "Waterdrop G5P500A-CF",
+      "url": "https://www.waterdropfilter.com/products/cf-filter-for-alkaline-ro-water-purifier-g5p500a",
+      "kind": "web-fabricante",
+      "checked": "2026-10-06"
+    }
+  ],
+  "status": "verificado"
+}

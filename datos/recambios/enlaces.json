@@ -1,0 +1,1032 @@
+{
+ "version": "2026-10-06",
+ "note": "Enlaces exactos de Amazon por referencia y tienda. Se publica aparte de la app. Sin enlace en una tienda, la app usa la búsqueda del perfil.",
+ "links": {
+  "ASR211": {
+   "es": {
+    "asin": "B083HX8V17",
+    "checked": "2026-10-06",
+    "price": "39,99€"
+   },
+   "it": {
+    "asin": "B083HX8V17",
+    "checked": "2026-10-06",
+    "price": "39,99€"
+   },
+   "fr": {
+    "asin": "B083HX8V17",
+    "checked": "2026-10-06",
+    "price": "33,99€"
+   },
+   "de": {
+    "asin": "B083HX8V17",
+    "checked": "2026-10-06",
+    "price": "33,99€"
+   },
+   "uk": {
+    "asin": "B083HX8V17",
+    "checked": "2026-10-06"
+   },
+   "us": {
+    "asin": "B083HX8V17",
+    "checked": "2026-10-06",
+    "price": "US$33.99"
+   },
+   "ca": {
+    "asin": "B083HX8V17",
+    "checked": "2026-10-06",
+    "price": "$59.99"
+   }
+  },
+  "ASR212-600G": {
+   "es": {
+    "asin": "B083HY6BT7",
+    "checked": "2026-10-06",
+    "price": "105,89€"
+   },
+   "it": {
+    "asin": "B083HY6BT7",
+    "checked": "2026-10-06",
+    "price": "89,99€"
+   },
+   "fr": {
+    "asin": "B083HY6BT7",
+    "checked": "2026-10-06",
+    "price": "89,99€"
+   },
+   "de": {
+    "asin": "B083HY6BT7",
+    "checked": "2026-10-06",
+    "price": "89,99€"
+   },
+   "uk": {
+    "asin": "B083HY6BT7",
+    "checked": "2026-10-06"
+   },
+   "us": {
+    "asin": "B083HY6BT7",
+    "checked": "2026-10-06",
+    "price": "US$85.99"
+   },
+   "ca": {
+    "asin": "B083HY6BT7",
+    "checked": "2026-10-06",
+    "price": "$125.99"
+   }
+  },
+  "ASR212-800G": {
+   "es": {
+    "asin": "B0B6VFG7HT",
+    "checked": "2026-10-06",
+    "price": "109,99€"
+   },
+   "it": {
+    "asin": "B0B6VFG7HT",
+    "checked": "2026-10-06",
+    "price": "109,99€"
+   },
+   "fr": {
+    "asin": "B0B6VFG7HT",
+    "checked": "2026-10-06",
+    "price": "109,99€"
+   },
+   "de": {
+    "asin": "B0B6VFG7HT",
+    "checked": "2026-10-06",
+    "price": "109,99€"
+   },
+   "uk": {
+    "asin": "B0B6VFG7HT",
+    "checked": "2026-10-06"
+   },
+   "us": {
+    "asin": "B0B6VFG7HT",
+    "checked": "2026-10-06",
+    "price": "US$99.99"
+   },
+   "ca": {
+    "asin": "B0B6VFG7HT",
+    "checked": "2026-10-06",
+    "price": "$139.99"
+   }
+  },
+  "FA15": {
+   "es": {
+    "asin": "B00FBLGD1S",
+    "checked": "2026-10-06",
+    "price": "30,99€"
+   },
+   "it": {
+    "asin": "B00FBLGD1S",
+    "checked": "2026-10-06",
+    "price": "30,99€"
+   },
+   "fr": {
+    "asin": "B00FBLGD1S",
+    "checked": "2026-10-06",
+    "price": "30,99€"
+   },
+   "de": {
+    "asin": "B00FBLGD1S",
+    "checked": "2026-10-06",
+    "price": "27,99€"
+   },
+   "ca": {
+    "asin": "B00FBLGD1S",
+    "checked": "2026-10-06",
+    "price": "$27.68"
+   }
+  },
+  "FC15": {
+   "es": {
+    "asin": "B00S5E5NJQ",
+    "checked": "2026-10-06",
+    "price": "10,99€"
+   },
+   "it": {
+    "asin": "B00S5E5NJQ",
+    "checked": "2026-10-06",
+    "price": "10,99€"
+   },
+   "fr": {
+    "asin": "B00S5E5NJQ",
+    "checked": "2026-10-06",
+    "price": "10,99€"
+   },
+   "de": {
+    "asin": "B00S5E5NJQ",
+    "checked": "2026-10-06",
+    "price": "12,99€"
+   },
+   "uk": {
+    "asin": "B00S5E5NJQ",
+    "checked": "2026-10-06"
+   },
+   "us": {
+    "asin": "B00S5E5NJQ",
+    "checked": "2026-10-06",
+    "price": "US$17.08"
+   },
+   "ca": {
+    "asin": "B00S5E5NJQ",
+    "checked": "2026-10-06",
+    "price": "$11.98"
+   }
+  },
+  "FG15": {
+   "es": {
+    "asin": "B01FH8SHDQ",
+    "checked": "2026-10-06",
+    "price": "10,99€"
+   },
+   "it": {
+    "asin": "B01FH8SHDQ",
+    "checked": "2026-10-06",
+    "price": "10,99€"
+   },
+   "fr": {
+    "asin": "B01FH8SHDQ",
+    "checked": "2026-10-06",
+    "price": "10,99€"
+   },
+   "de": {
+    "asin": "B01FH8SHDQ",
+    "checked": "2026-10-06",
+    "price": "11,99€"
+   },
+   "uk": {
+    "asin": "B01FH8SHDQ",
+    "checked": "2026-10-06"
+   },
+   "us": {
+    "asin": "B01FH8SHDQ",
+    "checked": "2026-10-06",
+    "price": "US$9.78"
+   },
+   "ca": {
+    "asin": "B01FH8SHDQ",
+    "checked": "2026-10-06",
+    "price": "$12.98"
+   }
+  },
+  "FP15": {
+   "es": {
+    "asin": "B01FH8SHJK",
+    "checked": "2026-10-06",
+    "price": "7,99€"
+   },
+   "it": {
+    "asin": "B01FH8SHJK",
+    "checked": "2026-10-06",
+    "price": "7,99€"
+   },
+   "fr": {
+    "asin": "B01FH8SHJK",
+    "checked": "2026-10-06",
+    "price": "7,99€"
+   },
+   "de": {
+    "asin": "B01FH8SHJK",
+    "checked": "2026-10-06",
+    "price": "9,99€"
+   },
+   "us": {
+    "asin": "B01FH8SHJK",
+    "checked": "2026-10-06",
+    "price": "US$13.99"
+   },
+   "ca": {
+    "asin": "B01FH8SHJK",
+    "checked": "2026-10-06",
+    "price": "$7.44"
+   }
+  },
+  "FT15": {
+   "es": {
+    "asin": "B01FH8SV0K",
+    "checked": "2026-10-06",
+    "price": "12,99€"
+   },
+   "it": {
+    "asin": "B01FH8SV0K",
+    "checked": "2026-10-06",
+    "price": "12,99€"
+   },
+   "fr": {
+    "asin": "B01FH8SV0K",
+    "checked": "2026-10-06",
+    "price": "12,99€"
+   },
+   "de": {
+    "asin": "B01FH8SV0K",
+    "checked": "2026-10-06",
+    "price": "12,99€"
+   },
+   "uk": {
+    "asin": "B01FH8SV0K",
+    "checked": "2026-10-06"
+   },
+   "ca": {
+    "asin": "B01FH8SV0K",
+    "checked": "2026-10-06",
+    "price": "$12.98"
+   }
+  },
+  "FZ-4": {
+   "es": {
+    "asin": "B083LYKGWG",
+    "checked": "2026-10-06",
+    "price": "31,99€"
+   },
+   "it": {
+    "asin": "B083LYKGWG",
+    "checked": "2026-10-06",
+    "price": "33,99€"
+   },
+   "fr": {
+    "asin": "B083LYKGWG",
+    "checked": "2026-10-06",
+    "price": "31,99€"
+   },
+   "de": {
+    "asin": "B083LYKGWG",
+    "checked": "2026-10-06",
+    "price": "31,99€"
+   },
+   "uk": {
+    "asin": "B083LYKGWG",
+    "checked": "2026-10-06"
+   },
+   "us": {
+    "asin": "B083LYKGWG",
+    "checked": "2026-10-06",
+    "price": "US$29.99"
+   },
+   "ca": {
+    "asin": "B083LYKGWG",
+    "checked": "2026-10-06",
+    "price": "$49.99"
+   }
+  },
+  "M2S": {
+   "uk": {
+    "asin": "B0DZ1Z586M",
+    "checked": "2026-10-06"
+   },
+   "us": {
+    "asin": "B0DZ1Z586M",
+    "checked": "2026-10-06",
+    "price": "US$29.99"
+   },
+   "ca": {
+    "asin": "B0DZ1Z586M",
+    "checked": "2026-10-06",
+    "price": "$50.66"
+   }
+  },
+  "MC7": {
+   "es": {
+    "asin": "B007TBB69W",
+    "checked": "2026-10-06",
+    "price": "30,99€"
+   },
+   "it": {
+    "asin": "B007TBB69W",
+    "checked": "2026-10-06",
+    "price": "30,99€"
+   },
+   "fr": {
+    "asin": "B007TBB69W",
+    "checked": "2026-10-06",
+    "price": "30,99€"
+   },
+   "de": {
+    "asin": "B007TBB69W",
+    "checked": "2026-10-06",
+    "price": "34,99€"
+   },
+   "uk": {
+    "asin": "B007TBB69W",
+    "checked": "2026-10-06"
+   },
+   "us": {
+    "asin": "B007TBB69W",
+    "checked": "2026-10-06",
+    "price": "US$35.19"
+   },
+   "ca": {
+    "asin": "B007TBB69W",
+    "checked": "2026-10-06",
+    "price": "$42.68"
+   }
+  },
+  "Q2S": {
+   "es": {
+    "asin": "B0DZ293M29",
+    "checked": "2026-10-06",
+    "price": "39,99€"
+   },
+   "it": {
+    "asin": "B0DZ293M29",
+    "checked": "2026-10-06",
+    "price": "29,99€"
+   },
+   "fr": {
+    "asin": "B0DZ293M29",
+    "checked": "2026-10-06",
+    "price": "49,99€"
+   },
+   "de": {
+    "asin": "B0DZ293M29",
+    "checked": "2026-10-06",
+    "price": "39,99€"
+   },
+   "uk": {
+    "asin": "B0DZ293M29",
+    "checked": "2026-10-06"
+   },
+   "us": {
+    "asin": "B0DZ293M29",
+    "checked": "2026-10-06",
+    "price": "US$29.99"
+   },
+   "ca": {
+    "asin": "B0DZ293M29",
+    "checked": "2026-10-06",
+    "price": "$50.66"
+   }
+  },
+  "RO-2.0S": {
+   "es": {
+    "asin": "B0DZ24Z8DC",
+    "checked": "2026-10-06",
+    "price": "49,99€"
+   },
+   "it": {
+    "asin": "B0DZ24Z8DC",
+    "checked": "2026-10-06",
+    "price": "49,99€"
+   },
+   "fr": {
+    "asin": "B0DZ24Z8DC",
+    "checked": "2026-10-06",
+    "price": "49,99€"
+   },
+   "de": {
+    "asin": "B0DZ24Z8DC",
+    "checked": "2026-10-06",
+    "price": "49,99€"
+   },
+   "uk": {
+    "asin": "B0DZ24Z8DC",
+    "checked": "2026-10-06"
+   },
+   "us": {
+    "asin": "B0DZ24Z8DC",
+    "checked": "2026-10-06",
+    "price": "US$49.99"
+   },
+   "ca": {
+    "asin": "B0DZ24Z8DC",
+    "checked": "2026-10-06",
+    "price": "$78.61"
+   }
+  },
+  "ROPOT-CTO": {
+   "es": {
+    "asin": "B09P8VX5SX",
+    "checked": "2026-10-06"
+   },
+   "it": {
+    "asin": "B09P8VX5SX",
+    "checked": "2026-10-06"
+   },
+   "fr": {
+    "asin": "B09P8VX5SX",
+    "checked": "2026-10-06",
+    "price": "66,86€"
+   },
+   "de": {
+    "asin": "B09P8VX5SX",
+    "checked": "2026-10-06"
+   },
+   "uk": {
+    "asin": "B09P8VX5SX",
+    "checked": "2026-10-06"
+   },
+   "us": {
+    "asin": "B09P8VX5SX",
+    "checked": "2026-10-06",
+    "price": "US$29.99"
+   },
+   "ca": {
+    "asin": "B09P8VX5SX",
+    "checked": "2026-10-06",
+    "price": "$42.97"
+   }
+  },
+  "ROPOT-PCF": {
+   "es": {
+    "asin": "B09P8WNGRZ",
+    "checked": "2026-10-06"
+   },
+   "it": {
+    "asin": "B09P8WNGRZ",
+    "checked": "2026-10-06"
+   },
+   "de": {
+    "asin": "B09P8WNGRZ",
+    "checked": "2026-10-06"
+   },
+   "uk": {
+    "asin": "B09P8WNGRZ",
+    "checked": "2026-10-06"
+   },
+   "us": {
+    "asin": "B09P8WNGRZ",
+    "checked": "2026-10-06",
+    "price": "US$29.99"
+   },
+   "ca": {
+    "asin": "B09P8WNGRZ",
+    "checked": "2026-10-06",
+    "price": "$48.49"
+   }
+  },
+  "ROPOT-PP": {
+   "es": {
+    "asin": "B09P8WS5MK",
+    "checked": "2026-10-06",
+    "price": "82,50€"
+   },
+   "it": {
+    "asin": "B09P8WS5MK",
+    "checked": "2026-10-06",
+    "price": "80,47€"
+   },
+   "fr": {
+    "asin": "B09P8WS5MK",
+    "checked": "2026-10-06",
+    "price": "84,19€"
+   },
+   "de": {
+    "asin": "B09P8WS5MK",
+    "checked": "2026-10-06",
+    "price": "75,65€"
+   },
+   "uk": {
+    "asin": "B09P8WS5MK",
+    "checked": "2026-10-06"
+   },
+   "us": {
+    "asin": "B09P8WS5MK",
+    "checked": "2026-10-06",
+    "price": "US$29.99"
+   },
+   "ca": {
+    "asin": "B09P8WS5MK",
+    "checked": "2026-10-06",
+    "price": "$48.60"
+   }
+  },
+  "WD-G2CF": {
+   "es": {
+    "asin": "B082D1VZ4P",
+    "checked": "2026-10-06",
+    "price": "34,99€"
+   },
+   "it": {
+    "asin": "B082D1VZ4P",
+    "checked": "2026-10-06",
+    "price": "35,99€"
+   },
+   "fr": {
+    "asin": "B082D1VZ4P",
+    "checked": "2026-10-06",
+    "price": "34,99€"
+   },
+   "de": {
+    "asin": "B082D1VZ4P",
+    "checked": "2026-10-06",
+    "price": "35,99€"
+   },
+   "uk": {
+    "asin": "B082D1VZ4P",
+    "checked": "2026-10-06"
+   },
+   "us": {
+    "asin": "B082D1VZ4P",
+    "checked": "2026-10-06",
+    "price": "US$29.99"
+   },
+   "ca": {
+    "asin": "B082D1VZ4P",
+    "checked": "2026-10-06",
+    "price": "$49.99"
+   }
+  },
+  "WD-G2MRO": {
+   "es": {
+    "asin": "B0DGT4Y82P",
+    "checked": "2026-10-06",
+    "price": "89,99€"
+   },
+   "it": {
+    "asin": "B0DGT4Y82P",
+    "checked": "2026-10-06",
+    "price": "89,99€"
+   },
+   "fr": {
+    "asin": "B0DGT4Y82P",
+    "checked": "2026-10-06",
+    "price": "89,99€"
+   },
+   "de": {
+    "asin": "B0DGT4Y82P",
+    "checked": "2026-10-06",
+    "price": "89,99€"
+   },
+   "uk": {
+    "asin": "B0DGT4Y82P",
+    "checked": "2026-10-06"
+   },
+   "us": {
+    "asin": "B0G5WFBH2L",
+    "checked": "2026-10-06",
+    "price": "US$89.99"
+   },
+   "ca": {
+    "asin": "B0G5WFBH2L",
+    "checked": "2026-10-06",
+    "price": "$115.99"
+   }
+  },
+  "WD-G2P6MRO": {
+   "es": {
+    "asin": "B09Q5ZDMV9",
+    "checked": "2026-10-06",
+    "price": "112,99€"
+   },
+   "it": {
+    "asin": "B09Q5ZDMV9",
+    "checked": "2026-10-06",
+    "price": "112,99€"
+   },
+   "fr": {
+    "asin": "B09Q5ZDMV9",
+    "checked": "2026-10-06",
+    "price": "112,99€"
+   },
+   "de": {
+    "asin": "B09Q5ZDMV9",
+    "checked": "2026-10-06",
+    "price": "112,99€"
+   },
+   "uk": {
+    "asin": "B09Q5ZDMV9",
+    "checked": "2026-10-06"
+   },
+   "us": {
+    "asin": "B0G5WH8R24",
+    "checked": "2026-10-06",
+    "price": "US$99.99"
+   },
+   "ca": {
+    "asin": "B0G5WH8R24",
+    "checked": "2026-10-06",
+    "price": "$125.99"
+   }
+  },
+  "WD-G3-CF": {
+   "es": {
+    "asin": "B07NZSSBWC",
+    "checked": "2026-10-06",
+    "price": "34,99€"
+   },
+   "it": {
+    "asin": "B07NZSSBWC",
+    "checked": "2026-10-06",
+    "price": "34,99€"
+   },
+   "fr": {
+    "asin": "B07NZSSBWC",
+    "checked": "2026-10-06",
+    "price": "34,99€"
+   },
+   "de": {
+    "asin": "B07NZSSBWC",
+    "checked": "2026-10-06",
+    "price": "34,99€"
+   },
+   "uk": {
+    "asin": "B07NZSSBWC",
+    "checked": "2026-10-06"
+   },
+   "us": {
+    "asin": "B07NZSSBWC",
+    "checked": "2026-10-06",
+    "price": "US$29.99"
+   },
+   "ca": {
+    "asin": "B07NZSSBWC",
+    "checked": "2026-10-06",
+    "price": "$49.99"
+   }
+  },
+  "WD-G3-N3CB": {
+   "es": {
+    "asin": "B07NXQ3S87",
+    "checked": "2026-10-06",
+    "price": "34,99€"
+   },
+   "it": {
+    "asin": "B07NXQ3S87",
+    "checked": "2026-10-06",
+    "price": "34,99€"
+   },
+   "fr": {
+    "asin": "B07NXQ3S87",
+    "checked": "2026-10-06",
+    "price": "34,99€"
+   },
+   "de": {
+    "asin": "B07NXQ3S87",
+    "checked": "2026-10-06",
+    "price": "34,99€"
+   },
+   "uk": {
+    "asin": "B07NXQ3S87",
+    "checked": "2026-10-06"
+   },
+   "us": {
+    "asin": "B07NXQ3S87",
+    "checked": "2026-10-06",
+    "price": "US$29.99"
+   },
+   "ca": {
+    "asin": "B07NXQ3S87",
+    "checked": "2026-10-06",
+    "price": "$49.99"
+   }
+  },
+  "WD-G3P600-RO": {
+   "es": {
+    "asin": "B0BN3XGDJB",
+    "checked": "2026-10-06",
+    "price": "119,99€"
+   },
+   "it": {
+    "asin": "B0BN3XGDJB",
+    "checked": "2026-10-06",
+    "price": "119,99€"
+   },
+   "fr": {
+    "asin": "B0BN3XGDJB",
+    "checked": "2026-10-06",
+    "price": "119,99€"
+   },
+   "de": {
+    "asin": "B0BN3XGDJB",
+    "checked": "2026-10-06",
+    "price": "118,95€"
+   },
+   "uk": {
+    "asin": "B0BN3XGDJB",
+    "checked": "2026-10-06"
+   },
+   "us": {
+    "asin": "B0BN3XGDJB",
+    "checked": "2026-10-06",
+    "price": "US$109.99"
+   },
+   "ca": {
+    "asin": "B0BN3XGDJB",
+    "checked": "2026-10-06",
+    "price": "$149.99"
+   }
+  },
+  "WD-G3P800-N2RO": {
+   "es": {
+    "asin": "B0999257WG",
+    "checked": "2026-10-06",
+    "price": "139,99€"
+   },
+   "it": {
+    "asin": "B0999257WG",
+    "checked": "2026-10-06",
+    "price": "139,99€"
+   },
+   "fr": {
+    "asin": "B0999257WG",
+    "checked": "2026-10-06",
+    "price": "139,99€"
+   },
+   "de": {
+    "asin": "B0999257WG",
+    "checked": "2026-10-06",
+    "price": "139,99€"
+   },
+   "us": {
+    "asin": "B0CP3L6MZS",
+    "checked": "2026-10-06",
+    "price": "US$139.99"
+   },
+   "ca": {
+    "asin": "B0CP3L6MZS",
+    "checked": "2026-10-06",
+    "price": "$199.99"
+   }
+  },
+  "WD-G5P500-CF": {
+   "es": {
+    "asin": "B0DZ61R2DW",
+    "checked": "2026-10-06",
+    "price": "31,99€"
+   },
+   "it": {
+    "asin": "B0DZ61R2DW",
+    "checked": "2026-10-06",
+    "price": "31,99€"
+   },
+   "fr": {
+    "asin": "B0DZ61R2DW",
+    "checked": "2026-10-06",
+    "price": "31,99€"
+   },
+   "de": {
+    "asin": "B0DZ61R2DW",
+    "checked": "2026-10-06",
+    "price": "31,99€"
+   },
+   "us": {
+    "asin": "B0DP4KLRVD",
+    "checked": "2026-10-06",
+    "price": "US$35.99"
+   },
+   "ca": {
+    "asin": "B0DP4KLRVD",
+    "checked": "2026-10-06",
+    "price": "$133.33"
+   }
+  },
+  "WD-G5P500-RO": {
+   "es": {
+    "asin": "B0DZ5ZR386",
+    "checked": "2026-10-06",
+    "price": "99,99€"
+   },
+   "it": {
+    "asin": "B0DZ5ZR386",
+    "checked": "2026-10-06",
+    "price": "99,99€"
+   },
+   "fr": {
+    "asin": "B0DZ5ZR386",
+    "checked": "2026-10-06",
+    "price": "99,99€"
+   },
+   "de": {
+    "asin": "B0DZ5ZR386",
+    "checked": "2026-10-06",
+    "price": "99,99€"
+   },
+   "uk": {
+    "asin": "B0DZ5ZR386",
+    "checked": "2026-10-06"
+   },
+   "us": {
+    "asin": "B0DP4KRJBQ",
+    "checked": "2026-10-06",
+    "price": "US$89.99"
+   },
+   "ca": {
+    "asin": "B0DP4KRJBQ",
+    "checked": "2026-10-06",
+    "price": "$129.99"
+   }
+  },
+  "WD-G5P500A-CF": {
+   "es": {
+    "asin": "B0DZ62Q5SF",
+    "checked": "2026-10-06",
+    "price": "35,99€"
+   },
+   "it": {
+    "asin": "B0DZ62Q5SF",
+    "checked": "2026-10-06",
+    "price": "35,99€"
+   },
+   "fr": {
+    "asin": "B0DZ62Q5SF",
+    "checked": "2026-10-06",
+    "price": "35,99€"
+   },
+   "de": {
+    "asin": "B0DZ62Q5SF",
+    "checked": "2026-10-06",
+    "price": "35,99€"
+   },
+   "us": {
+    "asin": "B0DP4LC2GC",
+    "checked": "2026-10-06",
+    "price": "US$39.99"
+   },
+   "ca": {
+    "asin": "B0DP4LC2GC",
+    "checked": "2026-10-06",
+    "price": "$59.99"
+   }
+  },
+  "WD-K19RF": {
+   "es": {
+    "asin": "B0B2897DFT",
+    "checked": "2026-10-06",
+    "price": "79,99€"
+   },
+   "it": {
+    "asin": "B0B2897DFT",
+    "checked": "2026-10-06",
+    "price": "79,99€"
+   },
+   "fr": {
+    "asin": "B0B2897DFT",
+    "checked": "2026-10-06",
+    "price": "79,99€"
+   },
+   "de": {
+    "asin": "B0B2897DFT",
+    "checked": "2026-10-06",
+    "price": "79,99€"
+   },
+   "uk": {
+    "asin": "B0B2897DFT",
+    "checked": "2026-10-06"
+   },
+   "us": {
+    "asin": "B0B253V5GT",
+    "checked": "2026-10-06",
+    "price": "US$68.99"
+   },
+   "ca": {
+    "asin": "B0B253V5GT",
+    "checked": "2026-10-06",
+    "price": "$99.98"
+   }
+  },
+  "WD-K19RFG": {
+   "es": {
+    "asin": "B0FPFQPLGF",
+    "checked": "2026-10-06",
+    "price": "89,00€"
+   },
+   "it": {
+    "asin": "B0FPFQPLGF",
+    "checked": "2026-10-06",
+    "price": "89,00€"
+   },
+   "fr": {
+    "asin": "B0FPFQPLGF",
+    "checked": "2026-10-06",
+    "price": "89,00€"
+   },
+   "de": {
+    "asin": "B0FPFQPLGF",
+    "checked": "2026-10-06",
+    "price": "89,00€"
+   },
+   "uk": {
+    "asin": "B0FPFQPLGF",
+    "checked": "2026-10-06"
+   }
+  }
+ },
+ "kits": {
+  "ROPOT-SET4": {
+   "covers": [
+    "ROPOT-PP",
+    "ROPOT-CTO",
+    "ROPOT-RO",
+    "ROPOT-PCF"
+   ],
+   "stores": {
+    "es": {
+     "asin": "B0CPBSDNHC",
+     "checked": "2026-10-06",
+     "price": "233,60€"
+    },
+    "it": {
+     "asin": "B0CPBSDNHC",
+     "checked": "2026-10-06",
+     "price": "242,42€"
+    },
+    "fr": {
+     "asin": "B0CPBSDNHC",
+     "checked": "2026-10-06",
+     "price": "242,42€"
+    },
+    "de": {
+     "asin": "B0CPBSDNHC",
+     "checked": "2026-10-06",
+     "price": "256,95€"
+    },
+    "uk": {
+     "asin": "B0CPBSDNHC",
+     "checked": "2026-10-06"
+    },
+    "us": {
+     "asin": "B0CPBSDNHC",
+     "checked": "2026-10-06",
+     "price": "US$149.96"
+    },
+    "ca": {
+     "asin": "B0CPBSDNHC",
+     "checked": "2026-10-06",
+     "price": "$194.94"
+    }
+   }
+  },
+  "ROPOT-SET1Y": {
+   "covers": [
+    "ROPOT-PP",
+    "ROPOT-CTO",
+    "ROPOT-PCF"
+   ],
+   "stores": {
+    "es": {
+     "asin": "B0CPBQX73Q",
+     "checked": "2026-10-06",
+     "price": "149,62€"
+    },
+    "it": {
+     "asin": "B0CPBQX73Q",
+     "checked": "2026-10-06",
+     "price": "157,71€"
+    },
+    "fr": {
+     "asin": "B0CPBQX73Q",
+     "checked": "2026-10-06",
+     "price": "150,37€"
+    },
+    "de": {
+     "asin": "B0CPBQX73Q",
+     "checked": "2026-10-06",
+     "price": "151,99€"
+    },
+    "uk": {
+     "asin": "B0CPBQX73Q",
+     "checked": "2026-10-06"
+    },
+    "us": {
+     "asin": "B0CPBQX73Q",
+     "checked": "2026-10-06",
+     "price": "US$89.97"
+    },
+    "ca": {
+     "asin": "B0CPBQX73Q",
+     "checked": "2026-10-06",
+     "price": "$112.20"
+    }
+   }
+  }
+ }
+}

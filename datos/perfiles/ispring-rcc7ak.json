@@ -1,0 +1,409 @@
+{
+  "id": "ispring-rcc7ak",
+  "version": 1,
+  "brand": "iSpring",
+  "model": "RCC7AK",
+  "aliases": [
+    "RCC7AK-BN",
+    "RCC7AK-UV",
+    "RCC7P-AK",
+    "RCC7"
+  ],
+  "category": "clasico-con-deposito",
+  "markets": [
+    "us",
+    "ca",
+    "uk",
+    "de",
+    "fr",
+    "it",
+    "es"
+  ],
+  "illustration": "clasico-5-etapas",
+  "indicator": {
+    "type": "ninguno"
+  },
+  "cartridges": [
+    {
+      "id": "S1",
+      "ref": "FP15",
+      "label": "gen5.cart.S1",
+      "stages": [
+        "sedimentos"
+      ],
+      "life": {
+        "months": 6,
+        "liters": null,
+        "editable": true,
+        "basis": "manual"
+      },
+      "fitting": "vaso-roscado",
+      "position": "vaso-1 (izquierda)",
+      "parts": {
+        "search": "iSpring FP15"
+      }
+    },
+    {
+      "id": "S2",
+      "ref": "FG15",
+      "label": "gen5.cart.S2",
+      "stages": [
+        "carbon-granular"
+      ],
+      "life": {
+        "months": 6,
+        "liters": null,
+        "editable": true,
+        "basis": "manual"
+      },
+      "fitting": "vaso-roscado",
+      "position": "vaso-2 (centro)",
+      "parts": {
+        "search": "iSpring FG15"
+      }
+    },
+    {
+      "id": "S3",
+      "ref": "FC15",
+      "label": "gen5.cart.S3",
+      "stages": [
+        "carbon-bloque"
+      ],
+      "life": {
+        "months": 6,
+        "liters": null,
+        "editable": true,
+        "basis": "manual"
+      },
+      "fitting": "vaso-roscado",
+      "position": "vaso-3 (derecha)",
+      "parts": {
+        "search": "iSpring FC15"
+      }
+    },
+    {
+      "id": "MEM",
+      "ref": "MC7",
+      "label": "gen5.cart.MEM",
+      "stages": [
+        "membrana-ro"
+      ],
+      "life": {
+        "months": 30,
+        "liters": null,
+        "editable": true,
+        "basis": "manual",
+        "rangeMonths": [
+          24,
+          36
+        ]
+      },
+      "fitting": "vaso-roscado",
+      "position": "portamembranas",
+      "parts": {
+        "search": "iSpring MC7 membrana 75 GPD"
+      }
+    },
+    {
+      "id": "POST",
+      "ref": "FT15",
+      "label": "gen5.cart.POST",
+      "stages": [
+        "postfiltro-carbon"
+      ],
+      "life": {
+        "months": 12,
+        "liters": null,
+        "editable": true,
+        "basis": "manual"
+      },
+      "fitting": "inline-rapido",
+      "position": "en línea",
+      "parts": {
+        "search": "iSpring FT15"
+      }
+    },
+    {
+      "id": "ALK",
+      "ref": "FA15",
+      "label": "isp.cart.ALK",
+      "stages": [
+        "remineralizador"
+      ],
+      "life": {
+        "months": 6,
+        "liters": null,
+        "editable": true,
+        "basis": "manual"
+      },
+      "fitting": "inline-rapido",
+      "position": "en línea, tras el postfiltro",
+      "parts": {
+        "search": "iSpring FA15"
+      }
+    }
+  ],
+  "procedures": {
+    "PREFILTROS": {
+      "title": "gen5.proc.PREFILTROS",
+      "cartridges": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "steps": [
+        {
+          "key": "gen5.prep.prefiltros",
+          "scene": [
+            "prep"
+          ]
+        },
+        {
+          "key": "gen5.cerrarEntrada",
+          "scene": [
+            "closeInlet"
+          ]
+        },
+        {
+          "key": "isp.vaciar",
+          "scene": [
+            "openTap"
+          ]
+        },
+        {
+          "key": "gen5.desenroscarVasos",
+          "scene": [
+            "unscrewHousing"
+          ],
+          "removes": true
+        },
+        {
+          "key": "gen5.limpiarVasos",
+          "scene": [
+            "cleanHousing"
+          ]
+        },
+        {
+          "key": "isp.juntas",
+          "scene": [
+            "oring"
+          ],
+          "critical": true
+        },
+        {
+          "key": "gen5.enjuagarCarbon",
+          "scene": [
+            "rinseCarbon"
+          ],
+          "critical": true
+        },
+        {
+          "key": "gen5.colocarCartuchos",
+          "scene": [
+            "insertCartridge"
+          ]
+        },
+        {
+          "key": "gen5.roscarVasos",
+          "scene": [
+            "screwHousing"
+          ]
+        },
+        {
+          "key": "gen5.abrirAgua",
+          "scene": [
+            "openInlet"
+          ]
+        },
+        {
+          "key": "comun.comprobarFugas",
+          "scene": [
+            "leak"
+          ],
+          "critical": true
+        },
+        {
+          "key": "isp.desechar",
+          "scene": [
+            "drainTank"
+          ],
+          "critical": true
+        },
+        {
+          "key": "comun.registrar",
+          "scene": [
+            "done"
+          ],
+          "register": true
+        }
+      ]
+    },
+    "MEMBRANA": {
+      "title": "gen5.proc.MEMBRANA",
+      "cartridges": [
+        "MEM"
+      ],
+      "steps": [
+        {
+          "key": "gen5.prep.membrana",
+          "scene": [
+            "prep"
+          ]
+        },
+        {
+          "key": "gen5.cerrarEntrada",
+          "scene": [
+            "closeInlet"
+          ]
+        },
+        {
+          "key": "isp.vaciar",
+          "scene": [
+            "openTap"
+          ]
+        },
+        {
+          "key": "gen5.cerrarDeposito",
+          "scene": [
+            "closeTankValve"
+          ]
+        },
+        {
+          "key": "gen5.abrirPortamembrana",
+          "scene": [
+            "openMembraneHousing"
+          ],
+          "removes": true
+        },
+        {
+          "key": "gen5.sacarMembrana",
+          "scene": [
+            "pullMembrane"
+          ]
+        },
+        {
+          "key": "gen5.limpiarPortamembrana",
+          "scene": [
+            "cleanHousing"
+          ]
+        },
+        {
+          "key": "gen5.meterMembrana",
+          "scene": [
+            "insertMembrane"
+          ],
+          "critical": true
+        },
+        {
+          "key": "gen5.cerrarPortamembrana",
+          "scene": [
+            "closeMembraneHousing"
+          ]
+        },
+        {
+          "key": "gen5.abrirAgua",
+          "scene": [
+            "openInlet"
+          ]
+        },
+        {
+          "key": "comun.comprobarFugas",
+          "scene": [
+            "leak"
+          ],
+          "critical": true
+        },
+        {
+          "key": "isp.desechar",
+          "scene": [
+            "drainTank"
+          ],
+          "critical": true
+        },
+        {
+          "key": "comun.registrar",
+          "scene": [
+            "done"
+          ],
+          "register": true
+        }
+      ]
+    },
+    "POST": {
+      "title": "isp.proc.POST",
+      "cartridges": [
+        "POST",
+        "ALK"
+      ],
+      "steps": [
+        {
+          "key": "gen5.prep.post",
+          "scene": [
+            "prep"
+          ]
+        },
+        {
+          "key": "gen5.cerrarEntrada",
+          "scene": [
+            "closeInlet"
+          ]
+        },
+        {
+          "key": "gen5.cerrarDeposito",
+          "scene": [
+            "closeTankValve"
+          ]
+        },
+        {
+          "key": "gen5.soltarRacores",
+          "scene": [
+            "releaseFittings"
+          ],
+          "removes": true
+        },
+        {
+          "key": "gen5.teflon",
+          "scene": [
+            "threadTape"
+          ]
+        },
+        {
+          "key": "gen5.sentidoFlujo",
+          "scene": [
+            "flowArrow"
+          ],
+          "critical": true
+        },
+        {
+          "key": "gen5.abrirAgua",
+          "scene": [
+            "openInlet"
+          ]
+        },
+        {
+          "key": "comun.comprobarFugas",
+          "scene": [
+            "leak"
+          ],
+          "critical": true
+        },
+        {
+          "key": "comun.registrar",
+          "scene": [
+            "done"
+          ],
+          "register": true
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Manual iSpring RCC7AK (ManualsLib)",
+      "url": "https://www.manualslib.com/manual/3358808/Ispring-Rcc7ak.html",
+      "kind": "manual-oficial",
+      "checked": "2026-10-06"
+    }
+  ],
+  "status": "verificado"
+}

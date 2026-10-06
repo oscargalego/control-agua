@@ -1,0 +1,572 @@
+{
+  "id": "waterdrop-g3p600",
+  "version": 1,
+  "brand": "Waterdrop",
+  "model": "G3P600",
+  "aliases": [
+    "WD-G3P600",
+    "G3P600 600 GPD"
+  ],
+  "category": "bajo-fregadero-sin-deposito",
+  "markets": [
+    "us",
+    "uk",
+    "de",
+    "fr",
+    "it",
+    "es"
+  ],
+  "illustration": "g3p600",
+  "indicator": {
+    "type": "pantalla",
+    "countsVolume": true,
+    "leds": [
+      {
+        "id": "CB",
+        "label": "CB"
+      },
+      {
+        "id": "CF",
+        "label": "CF"
+      },
+      {
+        "id": "RO",
+        "label": "RO"
+      }
+    ],
+    "screen": true,
+    "intro": "wd-g3.luces.intro",
+    "source": "wd-g3.luces.fuente"
+  },
+  "cartridges": [
+    {
+      "id": "CB",
+      "ref": "WD-G3-N3CB",
+      "label": "wd-g3.cart.CB",
+      "stages": [
+        "carbon-bloque"
+      ],
+      "life": {
+        "months": 12,
+        "liters": 4160,
+        "editable": true,
+        "basis": "web-fabricante"
+      },
+      "fitting": "bayoneta",
+      "position": "arriba",
+      "compatibleWith": [
+        "waterdrop-g3p800"
+      ],
+      "parts": {
+        "search": "Waterdrop G3-N3CB"
+      }
+    },
+    {
+      "id": "CF",
+      "ref": "WD-G3-CF",
+      "label": "wd-g3.cart.CF",
+      "stages": [
+        "sedimentos",
+        "carbon-bloque"
+      ],
+      "life": {
+        "months": 6,
+        "liters": null,
+        "editable": true,
+        "basis": "manual"
+      },
+      "fitting": "bayoneta",
+      "position": "centro",
+      "compatibleWith": [
+        "waterdrop-g3p800"
+      ],
+      "parts": {
+        "search": "Waterdrop G3-N1CF"
+      }
+    },
+    {
+      "id": "RO",
+      "ref": "WD-G3P600-RO",
+      "label": "wd-g3.cart.RO",
+      "stages": [
+        "membrana-ro"
+      ],
+      "life": {
+        "months": 24,
+        "liters": 8330,
+        "editable": true,
+        "basis": "manual"
+      },
+      "fitting": "bayoneta",
+      "position": "abajo",
+      "parts": {
+        "notThis": [
+          {
+            "ref": "RO del G3P800",
+            "reason": "wd-g3.notThis.RO800"
+          }
+        ],
+        "search": "Waterdrop G3P600 RO"
+      }
+    }
+  ],
+  "procedures": {
+    "CF": {
+      "title": "wd-g3.proc.CF",
+      "cartridges": [
+        "CF"
+      ],
+      "steps": [
+        {
+          "key": "wd-g3.prep",
+          "params": {
+            "f": "CF",
+            "ref": "WD-G3-CF"
+          },
+          "scene": [
+            "prep",
+            "CF"
+          ]
+        },
+        {
+          "key": "comun.cerrarGrifo",
+          "params": {
+            "s": 30
+          },
+          "scene": [
+            "closeTap"
+          ],
+          "timer": 30,
+          "timerKey": "comun.timer.presion"
+        },
+        {
+          "key": "wd-g3.alivio",
+          "scene": [
+            "relief"
+          ]
+        },
+        {
+          "key": "comun.girarAntihorario",
+          "params": {
+            "f": "CF"
+          },
+          "scene": [
+            "twistOut",
+            "CF"
+          ],
+          "removes": true
+        },
+        {
+          "key": "wd-g3.sacar",
+          "params": {
+            "f": "CF"
+          },
+          "scene": [
+            "pullOut",
+            "CF"
+          ]
+        },
+        {
+          "key": "comun.prepararNuevo",
+          "params": {
+            "f": "CF"
+          },
+          "scene": [
+            "unwrap",
+            "CF"
+          ]
+        },
+        {
+          "key": "wd-g3.insertarOff",
+          "scene": [
+            "insert",
+            "CF"
+          ]
+        },
+        {
+          "key": "wd-g3.girarOn",
+          "scene": [
+            "twistIn",
+            "CF"
+          ]
+        },
+        {
+          "key": "wd-g3.fugas",
+          "scene": [
+            "leak",
+            "CF"
+          ]
+        },
+        {
+          "key": "wd-g3.reset",
+          "params": {
+            "f": "CF",
+            "s": 7
+          },
+          "scene": [
+            "reset",
+            "CF",
+            7
+          ],
+          "critical": true
+        },
+        {
+          "key": "wd-g3.purga.cf",
+          "params": {
+            "min": 5
+          },
+          "scene": [
+            "flush",
+            5,
+            "CF"
+          ],
+          "timer": 300,
+          "timerKey": "comun.timer.purga",
+          "critical": true
+        },
+        {
+          "key": "comun.registrar",
+          "scene": [
+            "done"
+          ],
+          "register": true
+        }
+      ]
+    },
+    "RO": {
+      "title": "wd-g3.proc.RO",
+      "cartridges": [
+        "RO"
+      ],
+      "steps": [
+        {
+          "key": "wd-g3.prep",
+          "params": {
+            "f": "RO",
+            "ref": "WD-G3P600-RO"
+          },
+          "scene": [
+            "prep",
+            "RO"
+          ]
+        },
+        {
+          "key": "comun.cerrarGrifo",
+          "params": {
+            "s": 30
+          },
+          "scene": [
+            "closeTap"
+          ],
+          "timer": 30,
+          "timerKey": "comun.timer.presion"
+        },
+        {
+          "key": "comun.girarAntihorario",
+          "params": {
+            "f": "RO"
+          },
+          "scene": [
+            "twistOut",
+            "RO"
+          ],
+          "removes": true
+        },
+        {
+          "key": "wd-g3.sacar",
+          "params": {
+            "f": "RO"
+          },
+          "scene": [
+            "pullOut",
+            "RO"
+          ]
+        },
+        {
+          "key": "comun.prepararNuevo",
+          "params": {
+            "f": "RO"
+          },
+          "scene": [
+            "unwrap",
+            "RO"
+          ]
+        },
+        {
+          "key": "wd-g3.insertarOff",
+          "scene": [
+            "insert",
+            "RO"
+          ]
+        },
+        {
+          "key": "wd-g3.girarOn",
+          "scene": [
+            "twistIn",
+            "RO"
+          ]
+        },
+        {
+          "key": "wd-g3.fugas",
+          "scene": [
+            "leak",
+            "RO"
+          ]
+        },
+        {
+          "key": "wd-g3.reset",
+          "params": {
+            "f": "RO",
+            "s": 7
+          },
+          "scene": [
+            "reset",
+            "RO",
+            7
+          ],
+          "critical": true
+        },
+        {
+          "key": "wd-g3.purga.ro",
+          "params": {
+            "min": 30
+          },
+          "scene": [
+            "flush",
+            30,
+            "RO"
+          ],
+          "timer": 1800,
+          "timerKey": "comun.timer.purga",
+          "critical": true
+        },
+        {
+          "key": "comun.registrar",
+          "scene": [
+            "done"
+          ],
+          "register": true
+        }
+      ]
+    },
+    "CB": {
+      "title": "wd-g3.proc.CB",
+      "cartridges": [
+        "CB"
+      ],
+      "steps": [
+        {
+          "key": "wd-g3.prep",
+          "params": {
+            "f": "CB",
+            "ref": "WD-G3-N3CB"
+          },
+          "scene": [
+            "prep",
+            "CB"
+          ]
+        },
+        {
+          "key": "comun.cerrarGrifo",
+          "params": {
+            "s": 30
+          },
+          "scene": [
+            "closeTap"
+          ],
+          "timer": 30,
+          "timerKey": "comun.timer.presion"
+        },
+        {
+          "key": "comun.girarAntihorario",
+          "params": {
+            "f": "CB"
+          },
+          "scene": [
+            "twistOut",
+            "CB"
+          ],
+          "removes": true
+        },
+        {
+          "key": "wd-g3.sacar",
+          "params": {
+            "f": "CB"
+          },
+          "scene": [
+            "pullOut",
+            "CB"
+          ]
+        },
+        {
+          "key": "comun.prepararNuevo",
+          "params": {
+            "f": "CB"
+          },
+          "scene": [
+            "unwrap",
+            "CB"
+          ]
+        },
+        {
+          "key": "wd-g3.insertarOff",
+          "scene": [
+            "insert",
+            "CB"
+          ]
+        },
+        {
+          "key": "wd-g3.girarOn",
+          "scene": [
+            "twistIn",
+            "CB"
+          ]
+        },
+        {
+          "key": "wd-g3.fugas",
+          "scene": [
+            "leak",
+            "CB"
+          ]
+        },
+        {
+          "key": "wd-g3.reset",
+          "scene": [
+            "reset",
+            "CB",
+            7
+          ],
+          "critical": true,
+          "params": {
+            "f": "CB",
+            "s": 7
+          }
+        },
+        {
+          "key": "wd-g3.purga.ro",
+          "scene": [
+            "flush",
+            15,
+            "CB"
+          ],
+          "critical": true,
+          "params": {
+            "min": 15
+          },
+          "timer": 900,
+          "timerKey": "comun.timer.purga"
+        },
+        {
+          "key": "comun.registrar",
+          "scene": [
+            "done"
+          ],
+          "register": true
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Hoja WD-G3-CF",
+      "url": "https://www.manualslib.com/manual/3762731/Waterdrop-Wd-G3-Cf.html",
+      "kind": "hoja-cartucho",
+      "checked": "2026-10-06"
+    },
+    {
+      "title": "Hoja WD-G3P600-RO",
+      "url": "https://www.manualslib.com/manual/3434003/Waterdrop-Wd-G3p600-Ro.html",
+      "kind": "hoja-cartucho",
+      "checked": "2026-10-06"
+    },
+    {
+      "title": "Cartucho WD-G3-N3CB",
+      "url": "https://www.waterdropfilter.co.uk/products/waterdrop-wd-g3-n3cb-filter-replacement",
+      "kind": "web-fabricante",
+      "checked": "2026-10-06"
+    },
+    {
+      "title": "Foto oficial del frontal",
+      "url": "https://www.waterdropfilter.co.uk/collections/lead/products/waterdrop-reverse-osmosis-water-filtration-system",
+      "kind": "web-fabricante",
+      "checked": "2026-10-06"
+    },
+    {
+      "title": "Manual Waterdrop G3P600 (Manuals+)",
+      "url": "https://manuals.plus/m/f54dbc3f862582ef4ba2bc24618f3a34672ea48a151c2c31c820a9399ac62f0d",
+      "kind": "manual-oficial",
+      "checked": "2026-10-06"
+    }
+  ],
+  "status": "verificado",
+  "lights": [
+    {
+      "group": "wd-g3.luces.normal",
+      "items": [
+        {
+          "leds": {
+            "CB": "blue",
+            "CF": "blue",
+            "RO": "blue"
+          },
+          "key": "wd-g3.luces.normal.1",
+          "screen": "006"
+        },
+        {
+          "leds": {
+            "CB": "cycleyellow",
+            "CF": "cycleyellow",
+            "RO": "cycleyellow"
+          },
+          "key": "wd-g3.luces.normal.2"
+        }
+      ]
+    },
+    {
+      "group": "wd-g3.luces.vida",
+      "items": [
+        {
+          "leds": {
+            "CB": "blue",
+            "CF": "yellow",
+            "RO": "blue"
+          },
+          "key": "wd-g3.luces.vida.1",
+          "sound": "pitidos-2"
+        },
+        {
+          "leds": {
+            "CB": "blue",
+            "CF": "red",
+            "RO": "blue"
+          },
+          "key": "wd-g3.luces.vida.2",
+          "sound": "pitido-continuo"
+        }
+      ]
+    },
+    {
+      "group": "wd-g3.luces.averia",
+      "items": [
+        {
+          "leds": {},
+          "key": "wd-g3.luces.averia.E02",
+          "screen": "E02",
+          "sound": "pitido-continuo"
+        },
+        {
+          "leds": {},
+          "key": "wd-g3.luces.averia.E03",
+          "screen": "E03",
+          "sound": "pitido-3min"
+        },
+        {
+          "leds": {},
+          "key": "wd-g3.luces.averia.E04",
+          "screen": "E04",
+          "sound": "pitidos-5"
+        }
+      ]
+    }
+  ]
+}

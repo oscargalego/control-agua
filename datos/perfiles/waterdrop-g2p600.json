@@ -1,0 +1,730 @@
+{
+  "id": "waterdrop-g2p600",
+  "version": 1,
+  "brand": "Waterdrop",
+  "model": "G2P600",
+  "aliases": [
+    "WD-G2P600-W",
+    "WD-G2P600-B",
+    "G2P600 600 GPD"
+  ],
+  "category": "bajo-fregadero-sin-deposito",
+  "markets": [
+    "es",
+    "de",
+    "fr",
+    "it",
+    "uk",
+    "us",
+    "ca"
+  ],
+  "illustration": "frontal-g2",
+  "indicator": {
+    "type": "luces",
+    "countsVolume": true,
+    "lightsKey": "wd-g2",
+    "leds": [
+      {
+        "id": "drop",
+        "label": "💧"
+      },
+      {
+        "id": "CF",
+        "label": "CF"
+      },
+      {
+        "id": "MRO",
+        "label": "MRO"
+      },
+      {
+        "id": "pwr",
+        "label": "⚡"
+      }
+    ],
+    "intro": "wd-g2.luces.intro",
+    "source": "wd-g2.luces.fuente"
+  },
+  "lights": [
+    {
+      "group": "wd-g2.luces.normal",
+      "items": [
+        {
+          "leds": {
+            "drop": "blue",
+            "CF": "blue",
+            "MRO": "blue",
+            "pwr": "blue"
+          },
+          "key": "wd-g2.luces.normal.1"
+        },
+        {
+          "leds": {
+            "drop": "off",
+            "CF": "blue",
+            "MRO": "blue",
+            "pwr": "blue"
+          },
+          "key": "wd-g2.luces.normal.2"
+        },
+        {
+          "leds": {
+            "drop": "blink",
+            "CF": "blue",
+            "MRO": "blue",
+            "pwr": "blue"
+          },
+          "key": "wd-g2.luces.normal.3"
+        },
+        {
+          "leds": {
+            "drop": "cycle",
+            "CF": "cycle",
+            "MRO": "cycle",
+            "pwr": "cycle"
+          },
+          "key": "wd-g2.luces.normal.4"
+        }
+      ]
+    },
+    {
+      "group": "wd-g2.luces.vida",
+      "items": [
+        {
+          "leds": {
+            "drop": "off",
+            "CF": "blue",
+            "MRO": "blue",
+            "pwr": "blue"
+          },
+          "key": "wd-g2.luces.vida.1"
+        },
+        {
+          "leds": {
+            "drop": "off",
+            "CF": "purple",
+            "MRO": "blue",
+            "pwr": "blue"
+          },
+          "key": "wd-g2.luces.vida.2"
+        },
+        {
+          "leds": {
+            "drop": "off",
+            "CF": "red",
+            "MRO": "blue",
+            "pwr": "blue"
+          },
+          "key": "wd-g2.luces.vida.3"
+        },
+        {
+          "leds": {
+            "drop": "off",
+            "CF": "blink",
+            "MRO": "blue",
+            "pwr": "blue"
+          },
+          "key": "wd-g2.luces.vida.4"
+        }
+      ]
+    },
+    {
+      "group": "wd-g2.luces.averia",
+      "items": [
+        {
+          "leds": {
+            "drop": "off",
+            "CF": "blinkred",
+            "MRO": "blinkred",
+            "pwr": "off"
+          },
+          "key": "wd-g2.luces.averia.1"
+        },
+        {
+          "leds": {
+            "drop": "off",
+            "CF": "blinkpurple",
+            "MRO": "blinkpurple",
+            "pwr": "off"
+          },
+          "key": "wd-g2.luces.averia.2"
+        }
+      ]
+    }
+  ],
+  "cartridges": [
+    {
+      "id": "CF",
+      "ref": "WD-G2CF",
+      "label": "wd-g2.cart.CF",
+      "stages": [
+        "sedimentos",
+        "carbon-bloque"
+      ],
+      "life": {
+        "months": 12,
+        "liters": 4160,
+        "editable": true,
+        "basis": "manual"
+      },
+      "fitting": "bayoneta",
+      "position": "arriba",
+      "compatibleWith": [
+        "waterdrop-g2"
+      ],
+      "parts": {
+        "search": "Waterdrop G2CF"
+      }
+    },
+    {
+      "id": "MRO",
+      "ref": "WD-G2P6MRO",
+      "label": "wd-g2p600.cart.MRO",
+      "stages": [
+        "sedimentos",
+        "carbon-bloque",
+        "membrana-ro"
+      ],
+      "life": {
+        "months": 24,
+        "liters": null,
+        "editable": true,
+        "basis": "web-fabricante"
+      },
+      "fitting": "bayoneta",
+      "position": "abajo",
+      "parts": {
+        "search": "Waterdrop G2P6MRO",
+        "notThis": [
+          {
+            "ref": "WD-G2MRO",
+            "reason": "wd-g2p600.notThis.G2MRO"
+          }
+        ]
+      }
+    }
+  ],
+  "procedures": {
+    "CF": {
+      "title": "wd-g2.proc.CF",
+      "cartridges": [
+        "CF"
+      ],
+      "steps": [
+        {
+          "key": "wd-g2.prep",
+          "params": {
+            "ref": "WD-G2CF"
+          },
+          "scene": [
+            "prep"
+          ]
+        },
+        {
+          "key": "comun.cerrarGrifo",
+          "params": {
+            "s": 30
+          },
+          "scene": [
+            "closeTap"
+          ],
+          "timer": 30,
+          "timerKey": "comun.timer.presion"
+        },
+        {
+          "key": "wd-g2.sujetar.CF",
+          "scene": [
+            "grip",
+            "CF"
+          ]
+        },
+        {
+          "key": "comun.girarAntihorario",
+          "params": {
+            "f": "CF"
+          },
+          "scene": [
+            "twistOut",
+            "CF"
+          ],
+          "removes": true
+        },
+        {
+          "key": "wd-g2.sacar.CF",
+          "scene": [
+            "pullOut",
+            "CF"
+          ]
+        },
+        {
+          "key": "comun.prepararNuevo",
+          "params": {
+            "f": "CF"
+          },
+          "scene": [
+            "unwrap",
+            "CF"
+          ]
+        },
+        {
+          "key": "wd-g2.insertarOff",
+          "scene": [
+            "insert",
+            "CF"
+          ]
+        },
+        {
+          "key": "wd-g2.girarOn",
+          "scene": [
+            "twistIn",
+            "CF"
+          ]
+        },
+        {
+          "key": "wd-g2.fugas",
+          "scene": [
+            "leak",
+            "CF"
+          ]
+        },
+        {
+          "key": "wd-g2.reset.pulsar",
+          "scene": [
+            "resetHold"
+          ],
+          "critical": true
+        },
+        {
+          "key": "wd-g2.reset.elegir",
+          "params": {
+            "f": "CF",
+            "single": true
+          },
+          "scene": [
+            "resetSelect",
+            "CF"
+          ],
+          "critical": true
+        },
+        {
+          "key": "wd-g2.reset.confirmar",
+          "params": {
+            "f": "CF"
+          },
+          "scene": [
+            "resetDone",
+            "CF"
+          ],
+          "critical": true
+        },
+        {
+          "key": "wd-g2.purga",
+          "params": {
+            "min": 5
+          },
+          "scene": [
+            "flush",
+            5
+          ],
+          "timer": 300,
+          "timerKey": "comun.timer.purga",
+          "critical": true
+        },
+        {
+          "key": "comun.ultimaRevision",
+          "scene": [
+            "leak",
+            "CF"
+          ]
+        },
+        {
+          "key": "comun.registrar",
+          "scene": [
+            "done"
+          ],
+          "register": true
+        }
+      ]
+    },
+    "MRO": {
+      "title": "wd-g2.proc.MRO",
+      "cartridges": [
+        "MRO"
+      ],
+      "steps": [
+        {
+          "key": "wd-g2.prep",
+          "params": {
+            "ref": "WD-G2P6MRO"
+          },
+          "scene": [
+            "prep"
+          ]
+        },
+        {
+          "key": "comun.cerrarGrifo",
+          "params": {
+            "s": 30
+          },
+          "scene": [
+            "closeTap"
+          ],
+          "timer": 30,
+          "timerKey": "comun.timer.presion"
+        },
+        {
+          "key": "wd-g2.sujetar.MRO",
+          "scene": [
+            "grip",
+            "MRO"
+          ]
+        },
+        {
+          "key": "comun.girarAntihorario",
+          "params": {
+            "f": "MRO"
+          },
+          "scene": [
+            "twistOut",
+            "MRO"
+          ],
+          "removes": true
+        },
+        {
+          "key": "wd-g2.sacar.MRO",
+          "scene": [
+            "pullOut",
+            "MRO"
+          ]
+        },
+        {
+          "key": "comun.prepararNuevo",
+          "params": {
+            "f": "MRO"
+          },
+          "scene": [
+            "unwrap",
+            "MRO"
+          ]
+        },
+        {
+          "key": "wd-g2.insertarOff",
+          "scene": [
+            "insert",
+            "MRO"
+          ]
+        },
+        {
+          "key": "wd-g2.girarOn",
+          "scene": [
+            "twistIn",
+            "MRO"
+          ]
+        },
+        {
+          "key": "wd-g2.fugas",
+          "scene": [
+            "leak",
+            "MRO"
+          ]
+        },
+        {
+          "key": "wd-g2.reset.pulsar",
+          "scene": [
+            "resetHold"
+          ],
+          "critical": true
+        },
+        {
+          "key": "wd-g2.reset.elegir",
+          "params": {
+            "f": "MRO",
+            "single": true
+          },
+          "scene": [
+            "resetSelect",
+            "MRO"
+          ],
+          "critical": true
+        },
+        {
+          "key": "wd-g2.reset.confirmar",
+          "params": {
+            "f": "MRO"
+          },
+          "scene": [
+            "resetDone",
+            "MRO"
+          ],
+          "critical": true
+        },
+        {
+          "key": "wd-g2.purga",
+          "params": {
+            "min": 30
+          },
+          "scene": [
+            "flush",
+            30
+          ],
+          "timer": 1800,
+          "timerKey": "comun.timer.purga",
+          "critical": true
+        },
+        {
+          "key": "comun.ultimaRevision",
+          "scene": [
+            "leak",
+            "MRO"
+          ]
+        },
+        {
+          "key": "comun.registrar",
+          "scene": [
+            "done"
+          ],
+          "register": true
+        }
+      ]
+    },
+    "AMBOS": {
+      "title": "wd-g2.proc.AMBOS",
+      "cartridges": [
+        "CF",
+        "MRO"
+      ],
+      "steps": [
+        {
+          "key": "wd-g2p600.prepAmbos",
+          "scene": [
+            "prep"
+          ]
+        },
+        {
+          "key": "comun.cerrarGrifo",
+          "params": {
+            "s": 30
+          },
+          "scene": [
+            "closeTap"
+          ],
+          "timer": 30,
+          "timerKey": "comun.timer.presion"
+        },
+        {
+          "key": "wd-g2.sujetar.CF",
+          "scene": [
+            "grip",
+            "CF"
+          ]
+        },
+        {
+          "key": "comun.girarAntihorario",
+          "params": {
+            "f": "CF"
+          },
+          "scene": [
+            "twistOut",
+            "CF"
+          ],
+          "removes": true
+        },
+        {
+          "key": "wd-g2.sacar.CF",
+          "scene": [
+            "pullOut",
+            "CF"
+          ]
+        },
+        {
+          "key": "comun.prepararNuevo",
+          "params": {
+            "f": "CF"
+          },
+          "scene": [
+            "unwrap",
+            "CF"
+          ]
+        },
+        {
+          "key": "wd-g2.insertarOff",
+          "scene": [
+            "insert",
+            "CF"
+          ]
+        },
+        {
+          "key": "wd-g2.girarOn",
+          "scene": [
+            "twistIn",
+            "CF"
+          ]
+        },
+        {
+          "key": "wd-g2.fugas",
+          "scene": [
+            "leak",
+            "CF"
+          ]
+        },
+        {
+          "key": "wd-g2.reset.pulsar",
+          "scene": [
+            "resetHold"
+          ],
+          "critical": true
+        },
+        {
+          "key": "wd-g2.reset.elegir",
+          "params": {
+            "f": "CF",
+            "single": false
+          },
+          "scene": [
+            "resetSelect",
+            "CF"
+          ],
+          "critical": true
+        },
+        {
+          "key": "wd-g2.reset.confirmar",
+          "params": {
+            "f": "CF"
+          },
+          "scene": [
+            "resetDone",
+            "CF"
+          ],
+          "critical": true
+        },
+        {
+          "key": "wd-g2.sujetar.MRO",
+          "scene": [
+            "grip",
+            "MRO"
+          ]
+        },
+        {
+          "key": "comun.girarAntihorario",
+          "params": {
+            "f": "MRO"
+          },
+          "scene": [
+            "twistOut",
+            "MRO"
+          ],
+          "removes": true
+        },
+        {
+          "key": "wd-g2.sacar.MRO",
+          "scene": [
+            "pullOut",
+            "MRO"
+          ]
+        },
+        {
+          "key": "comun.prepararNuevo",
+          "params": {
+            "f": "MRO"
+          },
+          "scene": [
+            "unwrap",
+            "MRO"
+          ]
+        },
+        {
+          "key": "wd-g2.insertarOff",
+          "scene": [
+            "insert",
+            "MRO"
+          ]
+        },
+        {
+          "key": "wd-g2.girarOn",
+          "scene": [
+            "twistIn",
+            "MRO"
+          ]
+        },
+        {
+          "key": "wd-g2.fugas",
+          "scene": [
+            "leak",
+            "MRO"
+          ]
+        },
+        {
+          "key": "wd-g2.reset.pulsar",
+          "scene": [
+            "resetHold"
+          ],
+          "critical": true
+        },
+        {
+          "key": "wd-g2.reset.elegir",
+          "params": {
+            "f": "MRO",
+            "single": false
+          },
+          "scene": [
+            "resetSelect",
+            "MRO"
+          ],
+          "critical": true
+        },
+        {
+          "key": "wd-g2.reset.confirmar",
+          "params": {
+            "f": "MRO"
+          },
+          "scene": [
+            "resetDone",
+            "MRO"
+          ],
+          "critical": true
+        },
+        {
+          "key": "wd-g2.purgaAmbos",
+          "params": {
+            "min": 30
+          },
+          "scene": [
+            "flush",
+            30
+          ],
+          "timer": 1800,
+          "timerKey": "comun.timer.purga",
+          "critical": true
+        },
+        {
+          "key": "comun.ultimaRevision",
+          "scene": [
+            "leak",
+            "MRO"
+          ]
+        },
+        {
+          "key": "comun.registrar",
+          "scene": [
+            "done"
+          ],
+          "register": true
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Manual del sistema Waterdrop G2 / G2P600 (WD-G2-W, WD-G2P600-W)",
+      "url": "https://pdf.lowes.com/productdocuments/8a30159d-35de-4e28-b137-ffd84a1a3d6f/48824313.pdf",
+      "kind": "manual-oficial",
+      "checked": "2026-10-06"
+    },
+    {
+      "title": "Membrana WD-G2P6MRO: 24 meses",
+      "url": "https://www.lowes.com/pd/-/5013728649",
+      "kind": "tienda",
+      "checked": "2026-10-06"
+    }
+  ],
+  "status": "verificado"
+}

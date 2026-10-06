@@ -1,0 +1,80 @@
+/* Osmosis Control: estilos añadidos a la base de Control Agua */
+/* Ámbar para «pedir recambio» (la base usaba el morado del G2) */
+:root, [data-theme="dark"]{ --warn:#f2b84b; --warn-soft:rgba(242,184,75,.14) }
+[data-theme="light"]{ --warn:#b97c06; --warn-soft:rgba(185,124,6,.1) }
+
+/* frontal G3 */
+.dev-mark-off{fill:none;stroke:#4b535e;stroke-width:1.8}
+.dev-mark-on{fill:#4b535e}
+.dev-mark-arc{fill:none;stroke:#4b535e;stroke-width:1.8}
+.dev-mark-head{fill:#4b535e}
+.dev-chip{fill:none;stroke-width:1.6}
+.led-ring-blue{stroke:#4fb3ff}
+.led-ring-yellow{stroke:#f5c542}
+.led-ring-red{stroke:#ff5a5a}
+.dev-tds{font:600 34px/1 ui-monospace,monospace;fill:#4b535e;letter-spacing:2px}
+
+/* luces de cualquier equipo */
+.l-yellow{background:#f5c542;box-shadow:0 0 8px #f5c542}
+.l-na{background:none;border:1.5px dashed #9aa3ad;width:6px;height:6px}
+.l-cycleyellow{animation:cycy 2.4s steps(1) infinite}
+@keyframes cycy{0%{background:#3b9bff;box-shadow:0 0 8px #3b9bff}33%{background:#f5c542;box-shadow:0 0 8px #f5c542}66%{background:#ff3d55;box-shadow:0 0 8px #ff3d55}}
+.leds{position:relative}
+.leds-scr{grid-column:1/-1;justify-self:center;font:600 12px ui-monospace,monospace;color:#4b535e;background:#e9edf1;border-radius:6px;padding:2px 6px;margin-bottom:4px;white-space:nowrap}
+.leds-snd{position:absolute;right:-6px;top:-8px;font-style:normal;font-size:12px}
+.leds{grid-auto-flow:row;justify-content:center;min-width:64px}
+
+/* cabecera: selector de equipo */
+.brand{min-width:0} .brand span{min-width:0} .brand b,.brand small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.brand .caret{width:16px;height:16px;flex:none;color:var(--muted)}
+.brand.nodev .caret{display:none}
+
+/* vista previa / premium */
+.pv-badge{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:6px;margin:0 auto 8px;padding:6px 12px;border-radius:999px;
+  font-size:12px;font-weight:650;letter-spacing:.04em;color:var(--warn);background:var(--warn-soft);border:1px solid color-mix(in srgb,var(--warn) 35%,transparent)}
+.pv-badge .i{width:14px;height:14px}
+#v-home{display:flex;flex-direction:column;align-items:center}
+#v-filtros>.pv-badge{display:flex;width:max-content}
+.upsell{border-color:color-mix(in srgb,var(--acc) 40%,transparent);background:linear-gradient(160deg,var(--acc-soft),transparent 70%),var(--surf);width:100%;box-sizing:border-box}
+.upsell b{font-size:16px} .upsell p{color:var(--muted);font-size:14px;margin:6px 0 12px}
+.okhead.prem{background:var(--warn-soft);color:var(--warn)}
+.checks{list-style:none;padding:0;margin:10px 0 14px;display:grid;gap:8px}
+.checks li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px} .checks .i{width:18px;height:18px;color:var(--ok);flex:none;margin-top:2px}
+
+/* tarjetas de la portada según el número de cartuchos */
+.minis.n3{grid-template-columns:repeat(3,1fr)} .minis.n1{grid-template-columns:1fr}
+.minis.nmany{grid-template-columns:repeat(3,1fr)}
+.minis.n3 .mini,.minis.nmany .mini{padding:12px 10px} .minis.n3 .mini-v,.minis.nmany .mini-v{font-size:18px}
+.mini-l{overflow:hidden;text-overflow:ellipsis}
+#home-alerts{width:100%}
+
+/* elegir equipo */
+.search{display:flex;align-items:center;gap:10px;padding:0 14px;height:48px;border-radius:14px;background:var(--surf);border:1px solid var(--line2);margin:6px 0 10px}
+.search input{all:unset;flex:1;font-size:16px;color:var(--text)} .search .i{color:var(--muted)}
+.pick{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;gap:12px;width:100%;padding:14px 16px;margin:0 0 10px;
+  background:var(--surf);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.pick.on{border-color:var(--acc)} .pick .i{color:var(--muted);flex:none} .pick.on .i{color:var(--acc)}
+.pick-b{flex:1;min-width:0} .pick-b b{display:block;font-size:16px} .pick-b small{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+.pick-c{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px} .pick-c i{font-style:normal;font-size:10.5px;font-weight:700;letter-spacing:.06em;padding:2px 6px;border-radius:6px;background:var(--acc-soft);color:var(--acc)}
+
+/* filtros */
+.fcard .sub{margin:2px 0 0;font-size:13.5px;color:var(--muted)}
+.tag{background:var(--acc-soft);color:var(--acc)}
+
+/* recambios */
+.storebar{display:flex;gap:8px;align-items:baseline;font-size:13.5px;color:var(--muted);margin:0 2px 12px} .storebar b{color:var(--text)}
+.prod .ref{color:var(--text);font-size:12.5px;letter-spacing:.04em}
+.prod .row{margin-top:10px;flex-wrap:wrap} .prod .pwarn{margin:8px 0 0;font-size:13px}
+
+/* ajustes */
+.frow.dev{align-items:center} .frow.dev.on b{color:var(--acc)}
+.frow select{font:inherit;color:var(--text);background:var(--surf2);border:1px solid var(--line2);border-radius:10px;padding:8px 10px}
+.dev-tools{border-style:dashed}
+
+/* guía: paso bloqueado y paso importante */
+.proc-ill.is-locked{display:grid;place-items:center}
+.lockstage{width:120px;height:120px;border-radius:50%;display:grid;place-items:center;background:var(--warn-soft);color:var(--warn)}
+.lockstage .i{width:54px;height:54px;stroke-width:1.6}
+.locklist{color:var(--muted);font-size:14px;padding-left:22px;margin:8px 0 16px} .locklist li{margin:3px 0}
+.dots i.lk{opacity:.35}
+.crit{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--bad);background:var(--bad-soft);padding:3px 8px;border-radius:6px;margin-bottom:6px}

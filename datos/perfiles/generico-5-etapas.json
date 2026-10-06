@@ -1,0 +1,426 @@
+{
+  "id": "generico-5-etapas",
+  "version": 1,
+  "brand": "Genérico",
+  "model": "Ósmosis clásica de 5 etapas con depósito",
+  "aliases": [
+    "ATH Genius",
+    "Bbagua EUR-50",
+    "Nature Water Professionals",
+    "Hidrowater Nereo",
+    "APEC ROES-50",
+    "Finerfilters",
+    "Naturewater NW-RO50"
+  ],
+  "category": "clasico-con-deposito",
+  "generic": true,
+  "markets": [
+    "es",
+    "it",
+    "us",
+    "uk",
+    "de",
+    "fr"
+  ],
+  "illustration": "clasico-5-etapas",
+  "indicator": {
+    "type": "ninguno"
+  },
+  "cartridges": [
+    {
+      "id": "S1",
+      "ref": null,
+      "label": "gen5.cart.S1",
+      "stages": [
+        "sedimentos"
+      ],
+      "life": {
+        "months": 6,
+        "liters": null,
+        "editable": true,
+        "basis": "manual",
+        "rangeMonths": [
+          6,
+          12
+        ]
+      },
+      "fitting": "vaso-roscado",
+      "position": "vaso-1 (izquierda)",
+      "parts": {
+        "search": "filtro sedimentos 10 pulgadas 5 micras osmosis"
+      }
+    },
+    {
+      "id": "S2",
+      "ref": null,
+      "label": "gen5.cart.S2",
+      "stages": [
+        "carbon-granular"
+      ],
+      "life": {
+        "months": 12,
+        "liters": null,
+        "editable": true,
+        "basis": "manual",
+        "rangeMonths": [
+          6,
+          12
+        ]
+      },
+      "fitting": "vaso-roscado",
+      "position": "vaso-2 (centro)",
+      "parts": {
+        "search": "filtro carbon granular GAC 10 pulgadas osmosis"
+      }
+    },
+    {
+      "id": "S3",
+      "ref": null,
+      "label": "gen5.cart.S3",
+      "stages": [
+        "carbon-bloque"
+      ],
+      "life": {
+        "months": 12,
+        "liters": null,
+        "editable": true,
+        "basis": "manual",
+        "rangeMonths": [
+          6,
+          12
+        ]
+      },
+      "fitting": "vaso-roscado",
+      "position": "vaso-3 (derecha)",
+      "parts": {
+        "search": "filtro carbon bloque CTO 10 pulgadas osmosis"
+      }
+    },
+    {
+      "id": "MEM",
+      "ref": null,
+      "label": "gen5.cart.MEM",
+      "stages": [
+        "membrana-ro"
+      ],
+      "life": {
+        "months": 36,
+        "liters": null,
+        "editable": true,
+        "basis": "manual",
+        "rangeMonths": [
+          24,
+          48
+        ]
+      },
+      "fitting": "vaso-roscado",
+      "position": "portamembranas",
+      "parts": {
+        "search": "membrana osmosis inversa 50 GPD"
+      }
+    },
+    {
+      "id": "POST",
+      "ref": null,
+      "label": "gen5.cart.POST",
+      "stages": [
+        "postfiltro-carbon"
+      ],
+      "life": {
+        "months": 12,
+        "liters": null,
+        "editable": true,
+        "basis": "manual",
+        "rangeMonths": [
+          12,
+          24
+        ]
+      },
+      "fitting": "inline-rapido",
+      "position": "salida del depósito",
+      "parts": {
+        "search": "postfiltro carbon coco inline osmosis 1/4"
+      }
+    }
+  ],
+  "procedures": {
+    "PREFILTROS": {
+      "title": "gen5.proc.PREFILTROS",
+      "cartridges": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "steps": [
+        {
+          "key": "gen5.prep.prefiltros",
+          "scene": [
+            "prep"
+          ]
+        },
+        {
+          "key": "gen5.cerrarEntrada",
+          "scene": [
+            "closeInlet"
+          ]
+        },
+        {
+          "key": "gen5.vaciarSistema",
+          "scene": [
+            "openTap"
+          ]
+        },
+        {
+          "key": "gen5.desenroscarVasos",
+          "scene": [
+            "unscrewHousing"
+          ],
+          "removes": true
+        },
+        {
+          "key": "gen5.limpiarVasos",
+          "scene": [
+            "cleanHousing"
+          ]
+        },
+        {
+          "key": "gen5.juntas",
+          "scene": [
+            "oring"
+          ],
+          "critical": true
+        },
+        {
+          "key": "gen5.enjuagarCarbon",
+          "scene": [
+            "rinseCarbon"
+          ],
+          "critical": true
+        },
+        {
+          "key": "gen5.colocarCartuchos",
+          "scene": [
+            "insertCartridge"
+          ]
+        },
+        {
+          "key": "gen5.roscarVasos",
+          "scene": [
+            "screwHousing"
+          ]
+        },
+        {
+          "key": "gen5.abrirAgua",
+          "scene": [
+            "openInlet"
+          ]
+        },
+        {
+          "key": "comun.comprobarFugas",
+          "scene": [
+            "leak"
+          ],
+          "critical": true
+        },
+        {
+          "key": "gen5.desecharDepositos",
+          "scene": [
+            "drainTank"
+          ],
+          "critical": true
+        },
+        {
+          "key": "comun.registrar",
+          "scene": [
+            "done"
+          ],
+          "register": true
+        }
+      ]
+    },
+    "MEMBRANA": {
+      "title": "gen5.proc.MEMBRANA",
+      "cartridges": [
+        "MEM"
+      ],
+      "steps": [
+        {
+          "key": "gen5.prep.membrana",
+          "scene": [
+            "prep"
+          ]
+        },
+        {
+          "key": "gen5.cerrarEntrada",
+          "scene": [
+            "closeInlet"
+          ]
+        },
+        {
+          "key": "gen5.vaciarSistema",
+          "scene": [
+            "openTap"
+          ]
+        },
+        {
+          "key": "gen5.cerrarDeposito",
+          "scene": [
+            "closeTankValve"
+          ]
+        },
+        {
+          "key": "gen5.abrirPortamembrana",
+          "scene": [
+            "openMembraneHousing"
+          ],
+          "removes": true
+        },
+        {
+          "key": "gen5.sacarMembrana",
+          "scene": [
+            "pullMembrane"
+          ]
+        },
+        {
+          "key": "gen5.limpiarPortamembrana",
+          "scene": [
+            "cleanHousing"
+          ]
+        },
+        {
+          "key": "gen5.meterMembrana",
+          "scene": [
+            "insertMembrane"
+          ],
+          "critical": true
+        },
+        {
+          "key": "gen5.cerrarPortamembrana",
+          "scene": [
+            "closeMembraneHousing"
+          ]
+        },
+        {
+          "key": "gen5.abrirAgua",
+          "scene": [
+            "openInlet"
+          ]
+        },
+        {
+          "key": "comun.comprobarFugas",
+          "scene": [
+            "leak"
+          ],
+          "critical": true
+        },
+        {
+          "key": "gen5.desecharDepositos",
+          "scene": [
+            "drainTank"
+          ],
+          "critical": true
+        },
+        {
+          "key": "comun.registrar",
+          "scene": [
+            "done"
+          ],
+          "register": true
+        }
+      ]
+    },
+    "POST": {
+      "title": "gen5.proc.POST",
+      "cartridges": [
+        "POST"
+      ],
+      "steps": [
+        {
+          "key": "gen5.prep.post",
+          "scene": [
+            "prep"
+          ]
+        },
+        {
+          "key": "gen5.cerrarEntrada",
+          "scene": [
+            "closeInlet"
+          ]
+        },
+        {
+          "key": "gen5.cerrarDeposito",
+          "scene": [
+            "closeTankValve"
+          ]
+        },
+        {
+          "key": "gen5.soltarRacores",
+          "scene": [
+            "releaseFittings"
+          ],
+          "removes": true
+        },
+        {
+          "key": "gen5.teflon",
+          "scene": [
+            "threadTape"
+          ]
+        },
+        {
+          "key": "gen5.sentidoFlujo",
+          "scene": [
+            "flowArrow"
+          ],
+          "critical": true
+        },
+        {
+          "key": "gen5.abrirAgua",
+          "scene": [
+            "openInlet"
+          ]
+        },
+        {
+          "key": "comun.comprobarFugas",
+          "scene": [
+            "leak"
+          ],
+          "critical": true
+        },
+        {
+          "key": "comun.registrar",
+          "scene": [
+            "done"
+          ],
+          "register": true
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Manual Bbagua EUR-50 / EUR-50 BP / EUR-35 / BBbasic",
+      "url": "https://m.media-amazon.com/images/I/A159jHYRfCL.pdf",
+      "kind": "manual-oficial",
+      "checked": "2026-10-06"
+    },
+    {
+      "title": "Manual Bbagua RoTop (ósmosis compacta 5 etapas)",
+      "url": "https://assets.leroymerlin.es/is/content/lmes/16068710-0200m-es/e-osmosis-compacto-5-etapas-rechazo-bajo.pdf",
+      "kind": "manual-oficial",
+      "checked": "2026-10-06"
+    },
+    {
+      "title": "Manual ATH Genius",
+      "url": "https://navarroath.es/wp-content/uploads/2016/10/Manual-osmosis-Genius.pdf",
+      "kind": "manual-oficial",
+      "checked": "2026-10-06"
+    },
+    {
+      "title": "Manual ATH Genius Serie (ManualsLib)",
+      "url": "https://www.manualslib.es/manual/310691/Ath-Genius-Serie.html",
+      "kind": "manual-oficial",
+      "checked": "2026-10-06"
+    }
+  ],
+  "status": "verificado"
+}

@@ -1,0 +1,295 @@
+{
+  "id": "bluevua-ropot",
+  "version": 1,
+  "brand": "Bluevua",
+  "model": "RO100ROPOT / RO100ROPOT(UV)",
+  "aliases": [
+    "ROPOT",
+    "ROPOT UV",
+    "RO100ROPOT-UV"
+  ],
+  "category": "sobremesa",
+  "markets": [
+    "us",
+    "ca",
+    "uk"
+  ],
+  "illustration": "ropot",
+  "indicator": {
+    "type": "pantalla",
+    "countsVolume": false,
+    "leds": [
+      {
+        "id": "1",
+        "label": "1"
+      },
+      {
+        "id": "2",
+        "label": "2"
+      },
+      {
+        "id": "3",
+        "label": "3"
+      },
+      {
+        "id": "4",
+        "label": "4"
+      },
+      {
+        "id": "UV",
+        "label": "UV"
+      }
+    ],
+    "screen": true,
+    "intro": "ropot.luces.intro",
+    "source": "ropot.luces.fuente"
+  },
+  "cartridges": [
+    {
+      "id": "PP",
+      "ref": "ROPOT-PP",
+      "label": "ropot.cart.PP",
+      "stages": [
+        "sedimentos"
+      ],
+      "life": {
+        "months": 12,
+        "liters": null,
+        "editable": true,
+        "basis": "manual"
+      },
+      "fitting": "giro-sobremesa",
+      "position": "1",
+      "parts": {
+        "search": "Bluevua ROPOT PP"
+      }
+    },
+    {
+      "id": "CTO",
+      "ref": "ROPOT-CTO",
+      "label": "ropot.cart.CTO",
+      "stages": [
+        "carbon-bloque"
+      ],
+      "life": {
+        "months": 12,
+        "liters": null,
+        "editable": true,
+        "basis": "manual"
+      },
+      "fitting": "giro-sobremesa",
+      "position": "2",
+      "parts": {
+        "search": "Bluevua ROPOT CTO"
+      }
+    },
+    {
+      "id": "RO",
+      "ref": "ROPOT-RO",
+      "label": "ropot.cart.RO",
+      "stages": [
+        "membrana-ro"
+      ],
+      "life": {
+        "months": 24,
+        "liters": null,
+        "editable": true,
+        "basis": "manual",
+        "rangeMonths": [
+          12,
+          24
+        ]
+      },
+      "fitting": "giro-sobremesa",
+      "position": "3",
+      "parts": {
+        "search": "Bluevua ROPOT RO"
+      }
+    },
+    {
+      "id": "PCF",
+      "ref": "ROPOT-PCF",
+      "label": "ropot.cart.PCF",
+      "stages": [
+        "postfiltro-carbon"
+      ],
+      "life": {
+        "months": 12,
+        "liters": null,
+        "editable": true,
+        "basis": "manual"
+      },
+      "fitting": "giro-sobremesa",
+      "position": "4",
+      "parts": {
+        "search": "Bluevua ROPOT PCF"
+      }
+    }
+  ],
+  "procedures": {
+    "CAMBIO": {
+      "title": "ropot.proc.CAMBIO",
+      "cartridges": [
+        "PP",
+        "CTO",
+        "RO",
+        "PCF"
+      ],
+      "steps": [
+        {
+          "key": "ropot.seguridad",
+          "scene": [
+            "unplug"
+          ],
+          "critical": true
+        },
+        {
+          "key": "ropot.tapa",
+          "scene": [
+            "sideCover"
+          ]
+        },
+        {
+          "key": "ropot.sacar",
+          "scene": [
+            "tiltTwistOut"
+          ],
+          "removes": true
+        },
+        {
+          "key": "ropot.meter",
+          "scene": [
+            "twistLock"
+          ]
+        },
+        {
+          "key": "ropot.encender",
+          "scene": [
+            "powerOn"
+          ]
+        },
+        {
+          "key": "ropot.reset.mantener",
+          "params": {
+            "s": 3
+          },
+          "scene": [
+            "resetToggle"
+          ],
+          "critical": true
+        },
+        {
+          "key": "ropot.reset.elegir",
+          "scene": [
+            "resetSelect"
+          ],
+          "critical": true
+        },
+        {
+          "key": "ropot.reset.confirmar",
+          "scene": [
+            "resetToggle"
+          ],
+          "critical": true
+        },
+        {
+          "key": "ropot.purga",
+          "params": {
+            "n": 3
+          },
+          "scene": [
+            "flushCycles"
+          ],
+          "critical": true
+        },
+        {
+          "key": "comun.registrar",
+          "scene": [
+            "done"
+          ],
+          "register": true
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Manual Bluevua RO100ROPOT-UV",
+      "url": "https://m.media-amazon.com/images/I/B1qFHZQmK7L.pdf",
+      "kind": "manual-oficial",
+      "checked": "2026-10-06"
+    },
+    {
+      "title": "Manual Bluevua RO100ROPOT (ManualsLib)",
+      "url": "https://www.manualslib.com/guide/3269659/bluevua-ro100ropot-countertop-reverse-osmosis-water-filter-system-manual.html",
+      "kind": "manual-oficial",
+      "checked": "2026-10-06"
+    },
+    {
+      "title": "Bluevua: pasos para cambiar los filtros del ROPOT",
+      "url": "https://bluevua.com/products/bluevua-ro100ropot-ro100ropotuv-ro-filter",
+      "kind": "web-fabricante",
+      "checked": "2026-10-06"
+    },
+    {
+      "title": "Bluevua: filtro CTO, vida útil 12 meses",
+      "url": "https://bluevua.com/maintenance/3rd-cto-filter/",
+      "kind": "web-fabricante",
+      "checked": "2026-10-06"
+    }
+  ],
+  "status": "verificado",
+  "lights": [
+    {
+      "group": "ropot.luces.normal",
+      "items": [
+        {
+          "leds": {},
+          "key": "ropot.luces.normal.1",
+          "sound": "pitido"
+        },
+        {
+          "leds": {},
+          "key": "ropot.luces.normal.2",
+          "screen": "IN 250 · OUT 8"
+        },
+        {
+          "leds": {
+            "UV": "blue"
+          },
+          "key": "ropot.luces.normal.3"
+        },
+        {
+          "leds": {},
+          "key": "ropot.luces.normal.4"
+        }
+      ]
+    },
+    {
+      "group": "ropot.luces.filtros",
+      "items": [
+        {
+          "leds": {
+            "2": "blink"
+          },
+          "key": "ropot.luces.filtros.1"
+        },
+        {
+          "leds": {
+            "1": "blink"
+          },
+          "key": "ropot.luces.filtros.2"
+        }
+      ]
+    },
+    {
+      "group": "ropot.luces.aviso",
+      "items": [
+        {
+          "leds": {},
+          "key": "ropot.luces.aviso.1"
+        }
+      ]
+    }
+  ]
+}
